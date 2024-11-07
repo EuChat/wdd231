@@ -1,5 +1,51 @@
+:root {
+    --primary-color: rgb(50, 100, 150);
+    /* Slightly brighter blue */
+    --secondary-color: rgb(120, 120, 120);
+    /* Lighter gray */
+    --accent-color1: white;
+    /* Keep as white for contrast */
+    --accent-color2: rgb(30, 30, 30);
+    /* Dark gray instead of black */
+
+    --border: 1px solid var(--secondary-color);
+    /* Cohesive border color */
+}
+
+
 @media (max-width: 600px) {
     main {
         grid-template-columns: auto;
+        max-width: 100%;
+    }
+
+    #section3 {
+        grid-column: 1/2;
+    }
+
+    body {
+        min-width: 500px;
+    }
+
+    #menu {
+        display: block;
+        border: var(--border);
+        background-color: var(--accent-color2);
+        color: var(--accent-color1);
+        height: 50px;
+        width: auto;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation.show {
+        display: none;
+    }
+
+    .navigation {
+        padding: 0;
+        background-color: var(--accent-color2);
     }
 }

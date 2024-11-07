@@ -7,6 +7,7 @@
     <meta name="description" content="Home page for WDD231 by Garikai Chatayika">
     <meta name="author" content="Garikai Chatayika">
     <title>WDD231 Home Page</title>
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="/styles/styles-large.css">
     <link rel="stylesheet" href="/styles/styles-small.css">
     <script src="/scripts/javascript.js" defer></script>
@@ -15,15 +16,16 @@
 <body>
     <header>
         <div id="page-top">
-            <img src="/images/IMG_20240301_160233.webp" alt="my img thing">
+            <img src="/images/gary.webp" alt="my img thing">
             <h1>Garikai Chatayika</h1>
         </div>
         <nav>
-            <ul>
+            <button id="menu">≡</button>
+            <ul class="navigation">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
+                <li><a href="/images/istockphoto-460551943-612x612.WebP">Chamber</a></li>
                 <li><a href="https://github.com/EuChat">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="/images/IMG_20240301_160233.webp">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
@@ -38,10 +40,10 @@
             </ul>
         </section>
         <section>
-            <h2>Mutasa, Zimbabwe</h2>
+            <h2>Victoria Falls, Zimbabwe</h2>
             <img src="/images/istockphoto-460551943-612x612.WebP" alt="Great Zim">
         </section>
-        <section>
+        <section id="section3">
             <h2>Web and Computer Programming Certificate</h2>
             <ul>
                 <li></li>
@@ -59,8 +61,8 @@
         </section>
     </main>
     <footer>
-        <p><span id="currentyear"></span></p>
-        <p>lastmodified</p>
+        <p>©<span id="year"></span>⚡ Garikai Chatayika ⚡ Zimbabwe</p>
+        <p id="lastModified">lastmodified</p>
     </footer>
 </body>
 
