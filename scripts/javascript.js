@@ -1,5 +1,6 @@
 let year = document.querySelector('#year')
 let lastMod = document.querySelector('#lastModified')
+let courselist = document.querySelector('#Courses')
 
 let today = new Date()
 year.textContent += today.getFullYear()
