@@ -110,3 +110,41 @@ const courses = [
         completed: false
     }
 ]
+
+CreateButtons(courses)
+
+function CreateButtons(list) {
+    list.forEach(course => {
+        let button = document.createElement('button');
+        // let subject = document.createElement('h3');
+        // let number = document.createElement('p');
+        // let title = document.createElement('p');
+        // let credits = document.createElement('p');
+        // let certificate = document.createElement('p');
+        // let description = document.createElement('p');
+        // let technology = document.createElement('p');
+        // let completed = document.createElement('p');
+
+        button.textContent = `${course.subject} ${course.number}`
+        // subject.textContent = course.subject;
+        // number.textContent = course.number;
+        // title.textContent = course.title;
+        // credits.textContent = course.credits;
+        // certificate.textContent = course.certificate;
+        // description.textContent = course.description;
+        // technology.textContent = course.technology;
+        // completed.textContent = course.completed;
+
+        // button.appendChild(subject);
+        // button.appendChild(number);
+        // button.appendChild(title);
+        // button.appendChild(credits);
+        // button.appendChild(certificate);
+        // button.appendChild(description);
+        // button.appendChild(technology);
+        // button.appendChild(completed);
+
+        courselist.appendChild(button)
+    });
+
+}
