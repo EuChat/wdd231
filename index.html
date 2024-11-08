@@ -8,7 +8,7 @@
     <meta name="author" content="Garikai Chatayika">
     <title>WDD231 Home Page</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="/styles/styles-small.css">
+    <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="/styles/styles-large.css">
     <script src="/scripts/javascript.js" defer></script>
 </head>
@@ -16,7 +16,7 @@
 <body>
     <header>
         <div id="page-top">
-            <img src="/images/gary.webp" alt="my img thing" width="300px">
+            <img src="/images/gary.webp" alt="my img thing" width="300px" loading="lazy">
             <h1>Garikai Chatayika</h1>
         </div>
         <button id="menu" type="button">≡</button>
@@ -25,7 +25,9 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="/images/istockphoto-460551943-612x612.WebP">Chamber</a></li>
                 <li><a href="https://github.com/EuChat">GitHub Profile</a></li>
-                <li><a href="/images/IMG_20240301_160233.webp">LinkedIn</a></li>
+                <li><a
+                        href="https://www.linkedin.com/in/garikai-chataika-bb7031267/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BnNFe4wDRQnWUfkPFNOX39A%3D%3D">LinkedIn</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -41,13 +43,21 @@
         </section>
         <section>
             <h2>Victoria Falls, Zimbabwe</h2>
-            <img src="/images/istockphoto-460551943-612x612.WebP" alt="Great Zim" width="300px">
+            <img src="/images/istockphoto-460551943-612x612.WebP" alt="Great Zim" width="300px" loading="lazy">
         </section>
         <section id="section3">
             <h2>Web and Computer Programming Certificate</h2>
+
+            <div class="buttons">
+                <button type="button" id="ALL">ALL</button>
+                <button type="button" id="CSE">CSE</button>
+                <button type="button" id="WDD">WDD</button>
+            </div>
+
             <div id="Courses">
 
             </div>
+            <aside id="Count"></aside>
         </section>
     </main>
     <footer>

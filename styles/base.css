@@ -69,8 +69,8 @@ img {
 
 button {
     height: 50px;
-    border: 3px solid black;
-    background-color: var(--primary-color);
+    border: var(--border);
+    background-color: var(--secondary-color);
 }
 
 #menu {
@@ -115,20 +115,33 @@ h3 {
 
 #Courses {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
     gap: 20px;
     padding: 10px;
 
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    background-color: var(--accent-color1);
+    border-bottom: var(--border);
+    gap: 10px;
+    height: 40px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.buttons button {
+    color: var(--accent-color1);
+    background-color: var(--accent-color2);
+    height: auto;
+    border-radius: 20%;
+}
+
 img[src='/images/istockphoto-460551943-612x612.WebP'] {
     width: 100%;
     height: auto;
-}
-
-button:hover {
-    background-color: var(--secondary-color);
-    box-shadow: 1px 1px 5px 5px var(--secondary-color);
 }
 
 /* footer */

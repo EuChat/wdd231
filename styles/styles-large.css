@@ -52,6 +52,10 @@
         background-color: var(--accent-color2);
     }
 
+    #Courses {
+        grid-template-columns: auto auto auto;
+
+    }
 
     #menu {
         display: none;

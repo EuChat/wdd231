@@ -1,11 +1,16 @@
 let year = document.querySelector('#year')
 let lastMod = document.querySelector('#lastModified')
 let courselist = document.querySelector('#Courses')
+let cseFilter = document.querySelector('#CSE')
+let allbutton = document.querySelector('#ALL')
+let wddFilter = document.querySelector('#WDD')
+let creditCount = document.querySelector('#Count')
 
 let today = new Date()
 year.textContent += today.getFullYear()
 
 lastMod.textContent += document.lastModified;
+
 
 
 // Store the selected elements that we are going to use. 
@@ -42,7 +47,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -55,7 +60,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -67,7 +72,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -79,7 +84,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -93,7 +98,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -114,37 +119,34 @@ const courses = [
 CreateButtons(courses)
 
 function CreateButtons(list) {
+    courselist.textContent = "";
     list.forEach(course => {
         let button = document.createElement('button');
-        // let subject = document.createElement('h3');
-        // let number = document.createElement('p');
-        // let title = document.createElement('p');
-        // let credits = document.createElement('p');
-        // let certificate = document.createElement('p');
-        // let description = document.createElement('p');
-        // let technology = document.createElement('p');
-        // let completed = document.createElement('p');
+        let completed = course.completed
 
-        button.textContent = `${course.subject} ${course.number}`
-        // subject.textContent = course.subject;
-        // number.textContent = course.number;
-        // title.textContent = course.title;
-        // credits.textContent = course.credits;
-        // certificate.textContent = course.certificate;
-        // description.textContent = course.description;
-        // technology.textContent = course.technology;
-        // completed.textContent = course.completed;
+        button.textContent = `${course.subject} ${course.number}`;
 
-        // button.appendChild(subject);
-        // button.appendChild(number);
-        // button.appendChild(title);
-        // button.appendChild(credits);
-        // button.appendChild(certificate);
-        // button.appendChild(description);
-        // button.appendChild(technology);
-        // button.appendChild(completed);
+        if (completed) {
+            button.style.backgroundColor = '#d4edda'
+        };
+        try {
+            list = list.filter(course => course.completed == true) //account for completed curve
+            let totalCredits = list.reduce((acc, course) => acc + course.credits, 0); // Calculate total credits
+            creditCount.textContent = totalCredits
 
-        courselist.appendChild(button)
+        }
+        catch {
+            creditCount.textContent = 'error';
+
+        };
+
+        courselist.appendChild(button);
+
     });
 
 }
+
+
+cseFilter.addEventListener('click', () => { CreateButtons(courses.filter(course => course.subject == 'CSE')) })
+allbutton.addEventListener('click', () => { CreateButtons(courses) })
+wddFilter.addEventListener('click', () => { CreateButtons(courses.filter(course => course.subject == 'WDD')) })
