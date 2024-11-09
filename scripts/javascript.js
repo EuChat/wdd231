@@ -122,6 +122,8 @@ function CreateButtons(list) {
     courselist.textContent = "";
     list.forEach(course => {
         let button = document.createElement('button');
+        button.type = button
+
         let completed = course.completed
 
         button.textContent = `${course.subject} ${course.number}`;
@@ -132,7 +134,7 @@ function CreateButtons(list) {
         try {
             list = list.filter(course => course.completed == true) //account for completed curve
             let totalCredits = list.reduce((acc, course) => acc + course.credits, 0); // Calculate total credits
-            creditCount.textContent = totalCredits
+            creditCount.textContent = `Credits accumulated from above ${totalCredits}`
 
         }
         catch {

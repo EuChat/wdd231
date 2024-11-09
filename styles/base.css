@@ -174,15 +174,17 @@ section {
 }
 
 h1,
-h2,
-h3 {
+h2 {
     background-color: var(--primary-color);
     align-self: center;
     min-height: 100px;
 }
 
-h3 {
+h2 {
     min-height: 50px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #Courses {
@@ -211,7 +213,7 @@ h3 {
     border-radius: 20%;
 }
 
-img[src='/images/istockphoto-460551943-612x612.WebP'] {
+#vicy {
     width: 100%;
     height: auto;
 }
