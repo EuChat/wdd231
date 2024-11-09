@@ -134,7 +134,7 @@ function CreateButtons(list) {
         try {
             list = list.filter(course => course.completed == true) //account for completed curve
             let totalCredits = list.reduce((acc, course) => acc + course.credits, 0); // Calculate total credits
-            creditCount.textContent = `Credits accumulated from above ${totalCredits}`
+            creditCount.textContent = `Credits accumulated from above is ${totalCredits}`
 
         }
         catch {
