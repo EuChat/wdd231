@@ -1,0 +1,20 @@
+[
+    {
+        "familyName": "Jason",
+        "dateMovedIn": "24/10/2024",
+        "numberOfPeople": 2,
+        "visitedByBishopric": true,
+        "individualFamilyMembers": [
+            {
+                "name": "Biden Jason",
+                "gender": "male",
+                "birthDate": "24/10/1940"
+            },
+            {
+                "name": "Sylvia Jason",
+                "gender": "female",
+                "birthDate": "24/10/1950"
+            }
+        ]
+    }
+]

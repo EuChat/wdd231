@@ -1,0 +1,64 @@
+/* global elements */
+
+
+:root {
+    --primary-color: rgb(50, 100, 150);
+    /* Slightly brighter blue */
+    --secondary-color: rgb(120, 120, 120);
+    /* Lighter gray */
+    --accent-color1: white;
+    /* Keep as white for contrast */
+    --accent-color2: rgb(30, 30, 30);
+    /* Dark gray instead of black */
+
+    --border: 1px solid var(--secondary-color);
+    /* Cohesive border color */
+}
+
+@media (min-width: 600px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: 70%;
+    }
+
+    /* header  elements*/
+
+    .navigation {
+        background-color: var(--accent-color2);
+        color: var(--accent-color1);
+        min-height: 50px;
+    }
+
+    a:visited {
+        color: wheat;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: var(--accent-color2);
+    }
+
+    .navigation.show {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: var(--accent-color2);
+    }
+
+    #Courses {
+        grid-template-columns: auto auto auto;
+
+    }
+
+    #menu {
+        display: none;
+    }
+
+}
