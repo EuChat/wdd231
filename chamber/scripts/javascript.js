@@ -2,7 +2,7 @@ let year = document.querySelector('#year');
 let lastMod = document.querySelector('#lastModified');
 let container = document.querySelector('#directory');
 let today = new Date();
-let url = 'chamber/data/members.json';
+let url = 'https://euchat.github.io/wdd231/chamber/data/members.json';
 
 year.textContent += today.getFullYear();
 
@@ -35,12 +35,14 @@ hambutton.addEventListener('click', () => {
 GetBusinesses();
 
 async function GetBusinesses() {
-    let data = await fetch(url);
-    let info = data.json();
+    const data = await fetch(url);
+    const info = data.json();
 
     CreatCards(info);
 
 };
+
+
 
 function CreatCards(businesses) {
     businesses.forEach(business => {
@@ -49,17 +51,22 @@ function CreatCards(businesses) {
         let name = document.createElement('h2');
         let link = document.createElement('a');
         let description = document.createElement('p');
-        let numberOfMembers = document.createElement('p');
-        let phoneNumber = document.createElement('p');
         let address = document.createElement('p');
 
         img.setAttribute('src', business.image);
         img.setAttribute('alt', 'business image');
 
-        name.textContent = business.name
+        name.textContent = business.name;
+        address.textContent = business.address;
+        link.setAttribute('href', business.website);
+        link.textContent = business.phone;
+        description.textContent = business.description;
 
         card.appendChild(name)
         card.appendChild(img)
+        card.appendChild(description)
+        card.appendChild(address)
+        card.appendChild(link)
 
         container.appendChild(card)
 
