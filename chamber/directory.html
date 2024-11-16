@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chamber page for WDD231 by Garikai Chatayika">
     <meta name="author" content="Garikai Chatayika">
-    <title>WDD231 Home Page</title>
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <title>Mutare Chamber of Commerce Members</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/styles-large.css">
@@ -21,27 +27,39 @@
 
 <body>
     <header>
+        <div class="logo"> Mutare Chamber of Commerce</div>
         <div id="page-top">
-            <h1>Garikai Chatayika</h1>
+            <h1>Member Directory</h1>
         </div>
-        <button id="menu" type="button">≡</button>
+        <div id="search">
+            <button id="menu" type="button">≡</button>
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
         <nav>
             <ul class="navigation">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="https://github.com/EuChat">GitHub Profile</a></li>
-                <li><a
-                        href="https://www.linkedin.com/in/garikai-chataika-bb7031267/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BnNFe4wDRQnWUfkPFNOX39A%3D%3Ddo">LinkedIn</a>
-                </li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#discover">Discover</a></li>
+                <li><a href="#business">Business Directory</a></li>
+                <li><a href="#join">Join</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#podcast">Podcast</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
     </header>
     <main>
-        <p>word</p>
+        <div id="directory">
+        </div>
     </main>
     <footer>
         <p>©<span id="year"></span>⚡ Garikai Chatayika ⚡ Zimbabwe</p>
         <p id="lastModified">lastmodified</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
     </footer>
 </body>
 

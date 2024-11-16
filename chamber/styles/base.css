@@ -218,6 +218,11 @@ h2 {
     height: auto;
 }
 
+#search {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* footer */
 
 footer {
