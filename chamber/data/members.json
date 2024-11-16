@@ -23,7 +23,7 @@
             "address": "789 Market Square, Mutare",
             "phone": "+263 20 45623",
             "website": "https://manicafresh.example.com",
-            "image": "images/produce.WebP",
+            "image": "images/fresh.WebP",
             "membershipLevel": 1,
             "description": "Locally grown fruits and vegetables."
         },
@@ -41,7 +41,7 @@
             "address": "54 Health Plaza, Mutare",
             "phone": "+263 71 345 6789",
             "website": "https://highlandfitness.example.com",
-            "image": "images/motors.WebP",
+            "image": "images/fitness1.WebP",
             "membershipLevel": 3,
             "description": "Gym and personal training services."
         },
