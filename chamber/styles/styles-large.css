@@ -19,7 +19,6 @@
 
     main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
         gap: 10px;
         max-width: 70%;
     }
@@ -42,6 +41,9 @@
         justify-content: space-evenly;
         align-items: center;
         background-color: var(--accent-color2);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
     .navigation.show {
@@ -50,6 +52,12 @@
         justify-content: space-evenly;
         align-items: center;
         background-color: var(--accent-color2);
+    }
+
+    @media (min-width: 600px) {
+        .navigation {
+            flex-wrap: nowrap;
+        }
     }
 
     #Courses {
@@ -66,4 +74,15 @@
         grid-template-columns: 75% 25%;
     }
 
-}
+    @media (min-width: 768px) {
+        #directory {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            min-height: 100vh;
+        }
+    }

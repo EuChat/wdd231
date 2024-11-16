@@ -56,6 +56,9 @@ function CreatCards(data) {
 
         img.setAttribute('src', business.image);
         img.setAttribute('alt', 'business image');
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('width', '300');
+        img.setAttribute('height', '300');
 
         name.textContent = business.name;
         address.textContent = business.address;
@@ -73,3 +76,13 @@ function CreatCards(data) {
 
     })
 };
+
+// Select the hero container
+const heroContainer = document.getElementById('hero');
+
+// Define the image URL
+const heroImageURL = '"C:\Users\Gary\Desktop\wdd231\chamber\images\anastasiia-kamil-RHA-GKdSAew-unsplash.WebP"' // Replace with your image path
+
+// Set the background image dynamically
+heroContainer.style.backgroundImage = `url(${heroImageURL})`;
+

@@ -5,7 +5,7 @@
             "address": "123 Main St, Mutare",
             "phone": "+263 20 63545",
             "website": "https://mutarehardware.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/hardware.WebP",
+            "image": "images/hardware.WebP",
             "membershipLevel": 2,
             "description": "Building materials and tools provider."
         },
@@ -14,7 +14,7 @@
             "address": "456 Valley Rd, Mutare",
             "phone": "+263 77 345 6789",
             "website": "https://easternhighlands.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/tours.WebP",
+            "image": "images/tours.WebP",
             "membershipLevel": 3,
             "description": "Tour packages for the beautiful Eastern Highlands."
         },
@@ -23,7 +23,7 @@
             "address": "789 Market Square, Mutare",
             "phone": "+263 20 45623",
             "website": "https://manicafresh.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/produce.WebP",
+            "image": "images/produce.WebP",
             "membershipLevel": 1,
             "description": "Locally grown fruits and vegetables."
         },
@@ -32,7 +32,7 @@
             "address": "102 Innovation Hub, Mutare",
             "phone": "+263 77 567 1234",
             "website": "https://mutaretech.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/tech.WebP",
+            "image": "images/tech.WebP",
             "membershipLevel": 2,
             "description": "IT support and software development."
         },
@@ -41,7 +41,7 @@
             "address": "54 Health Plaza, Mutare",
             "phone": "+263 71 345 6789",
             "website": "https://highlandfitness.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/fitness.WebP",
+            "image": "images/motors.WebP",
             "membershipLevel": 3,
             "description": "Gym and personal training services."
         },
@@ -50,7 +50,7 @@
             "address": "76 High Street, Mutare",
             "phone": "+263 20 67890",
             "website": "https://mutarecafe.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/cafe.WebP",
+            "image": "images/cafe.WebP",
             "membershipLevel": 1,
             "description": "Coffee, pastries, and light meals."
         },
@@ -59,7 +59,7 @@
             "address": "99 Garage Rd, Mutare",
             "phone": "+263 78 555 2345",
             "website": "https://manicalandmotors.example.com",
-            "image": "https://github.com/EuChat/wdd231/blob/main/chamber/images/motors.WebP",
+            "image": "images/motors.WebP",
             "membershipLevel": 2,
             "description": "Car sales and maintenance services."
         }
