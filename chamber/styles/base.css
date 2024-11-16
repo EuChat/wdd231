@@ -101,21 +101,67 @@ body {
     font-style: italic;
 }
 
-/* Header styles */
+/* Header and Hero Image Styling */
 #top-bar {
+    position: relative;
+    height: 50vh;
+    /* Adjust hero height */
+    width: 100%;
+    background-image: url('./images/hero-image.webp');
+    /* Hero image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--accent-color1);
+    /* White text */
+    padding: 1rem;
+}
+
+/* Header Content (Logo + Title) */
+.header-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-    background-color: var(--primary-color);
+    gap: 1rem;
 }
 
 #logo {
-    width: 80px;
+    max-width: 150px;
+    /* Limit logo size for small screens */
     height: auto;
-    margin-right: 20px;
+    /* Maintain aspect ratio */
+    object-fit: contain;
 }
 
+@media screen and (min-width: 768px) {
+    #logo {
+        max-width: 200px;
+        /* Increase logo size for larger screens */
+    }
+}
+
+/* H1 Styling */
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        /* Increase font size on larger screens */
+    }
+}
+
+/* Search Bar */
+#search {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
 
 main {
@@ -205,12 +251,16 @@ button:active {
 
 .navigation {
     display: none;
-    padding: 0;
-    background-color: var(--accent-color2);
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent background */
+    border-radius: 5px;
+    padding: 1rem;
 }
 
 .navigation.show {
-    display: block;
+    display: flex;
 }
 
 nav ul li {
