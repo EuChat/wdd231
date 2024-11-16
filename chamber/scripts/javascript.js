@@ -44,7 +44,8 @@ async function GetBusinesses() {
 
 
 
-function CreatCards(businesses) {
+function CreatCards(data) {
+    let businesses = Array.isArray(data) ? data : [data];
     businesses.forEach(business => {
         let card = document.createElement('section');
         let img = document.createElement('img');
@@ -70,5 +71,5 @@ function CreatCards(businesses) {
 
         container.appendChild(card)
 
-    });
+    })
 };
