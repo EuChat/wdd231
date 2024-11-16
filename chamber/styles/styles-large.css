@@ -54,11 +54,10 @@
         background-color: var(--accent-color2);
     }
 
-    @media (min-width: 600px) {
-        .navigation {
-            flex-wrap: nowrap;
-        }
+    .navigation {
+        flex-wrap: nowrap;
     }
+
 
     #Courses {
         grid-template-columns: auto auto auto;
@@ -86,3 +85,4 @@
             min-height: 100vh;
         }
     }
+}

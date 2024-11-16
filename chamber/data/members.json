@@ -5,7 +5,7 @@
             "address": "123 Main St, Mutare",
             "phone": "+263 20 63545",
             "website": "https://mutarehardware.example.com",
-            "image": "images/hardware.WebP",
+            "image": "./images/hardware.WebP",
             "membershipLevel": 2,
             "description": "Building materials and tools provider."
         },

@@ -16,10 +16,12 @@
 
     --border: 2px solid var(--secondary-color);
     /* Cohesive border color */
+
+    --font-color: rgb(240, 240, 240);
+    /* Light gray for text readability */
 }
 
---font-color: rgb(240, 240, 240);
-/* Light gray for text readability */
+
 
 body {
     min-width: 500px;
