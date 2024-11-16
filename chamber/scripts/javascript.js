@@ -54,7 +54,7 @@ function CreatCards(data) {
         let description = document.createElement('p');
         let address = document.createElement('p');
 
-        img.setAttribute('src', business.image || 'images\istockphoto-460551943-612x612.WebP');
+        img.setAttribute('src', business.image);
         img.setAttribute('alt', 'business image');
 
         name.textContent = business.name;
