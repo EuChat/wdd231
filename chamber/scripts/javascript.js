@@ -36,9 +36,9 @@ GetBusinesses();
 
 async function GetBusinesses() {
     const data = await fetch(url);
-    const info = data.json();
+    const info = await data.json();
 
-    CreatCards(info);
+    CreatCards(info.businesses);
 
 };
 
@@ -54,7 +54,7 @@ function CreatCards(data) {
         let description = document.createElement('p');
         let address = document.createElement('p');
 
-        img.setAttribute('src', business.image);
+        img.setAttribute('src', business.image || 'images\istockphoto-460551943-612x612.WebP');
         img.setAttribute('alt', 'business image');
 
         name.textContent = business.name;
