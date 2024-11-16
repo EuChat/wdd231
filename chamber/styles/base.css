@@ -299,6 +299,25 @@ h2 {
     width: 100%;
 }
 
+h2 {
+    color: #FFFFFF;
+    /* Bright white for high contrast */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black for improved visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    /* Subtle shadow for depth */
+    padding: 0.5rem 1rem;
+    /* Add spacing for better readability */
+    border-radius: 5px;
+    /* Optional rounded corners for styling */
+    text-align: center;
+    /* Center the text */
+    margin: 0.5rem auto;
+    /* Space around the h2 */
+    display: inline-block;
+    /* Ensures only the text area is affected */
+}
+
 #Courses {
     display: grid;
     grid-template-columns: auto;
