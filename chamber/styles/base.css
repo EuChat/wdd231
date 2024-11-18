@@ -29,97 +29,6 @@ body {
     background-color: var(--accent-color2);
 }
 
-.roboto-thin {
-    font-family: "Roboto", serif;
-    font-weight: 100;
-    font-style: normal;
-}
-
-.roboto-light {
-    font-family: "Roboto", serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.roboto-regular {
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.roboto-medium {
-    font-family: "Roboto", serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.roboto-bold {
-    font-family: "Roboto", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.roboto-black {
-    font-family: "Roboto", serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-.roboto-thin-italic {
-    font-family: "Roboto", serif;
-    font-weight: 100;
-    font-style: italic;
-}
-
-.roboto-light-italic {
-    font-family: "Roboto", serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.roboto-regular-italic {
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.roboto-medium-italic {
-    font-family: "Roboto", serif;
-    font-weight: 500;
-    font-style: italic;
-}
-
-.roboto-bold-italic {
-    font-family: "Roboto", serif;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.roboto-black-italic {
-    font-family: "Roboto", serif;
-    font-weight: 900;
-    font-style: italic;
-}
-
-/* Header and Hero Image Styling */
-#top-bar {
-    position: relative;
-    height: 50vh;
-    /* Adjust hero height */
-    width: 100%;
-    background-image: url('./images/hero-image.WebP');
-    /* Hero image */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--accent-color1);
-    /* White text */
-    padding: 1rem;
-}
 
 /* Header Content (Logo + Title) */
 .header-content {
@@ -285,45 +194,13 @@ section {
     grid-column: 1 / 3;
 }
 
-h1,
-h2 {
-    background-color: var(--primary-color);
-    align-self: center;
-    min-height: 100px;
-}
 
 h2 {
     min-height: 50px;
     display: flex;
     justify-content: center;
     width: 100%;
-}
-
-h2 {
-    color: #FFFFFF;
-    /* Bright white for high contrast */
     background-color: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent black for improved visibility */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    /* Subtle shadow for depth */
-    padding: 0.5rem 1rem;
-    /* Add spacing for better readability */
-    border-radius: 5px;
-    /* Optional rounded corners for styling */
-    text-align: center;
-    /* Center the text */
-    margin: 0.5rem auto;
-    /* Space around the h2 */
-    display: inline-block;
-    /* Ensures only the text area is affected */
-}
-
-#Courses {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 20px;
-    padding: 10px;
-
 }
 
 .buttons {
@@ -342,11 +219,6 @@ h2 {
     background-color: var(--accent-color2);
     height: auto;
     border-radius: 20%;
-}
-
-#vicy {
-    width: 100%;
-    height: auto;
 }
 
 #search {
@@ -386,7 +258,8 @@ footer a:hover {
     padding: 1rem;
 }
 
-#directory h2 {
+#directory h2,
+h1 {
     color: #FFFFFF;
     /* Bright white for better visibility */
     background-color: rgba(0, 0, 0, 0.7);
@@ -417,13 +290,6 @@ section {
     justify-content: center;
     color: #333333;
     /* Dark gray font color for visibility */
-}
-
-section h2,
-section p,
-section a {
-    color: #333333;
-    /* Ensure all text on the cards is dark gray */
 }
 
 img {
@@ -461,4 +327,29 @@ img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+#hero {
+    position: relative;
+    z-index: 0;
+}
+
+/* Header and Hero Image Styling */
+#top-bar {
+    position: relative;
+    height: 50vh;
+    /* Adjust hero height */
+    width: 100%;
+    background-image: url(../images/hero-image.WebP);
+    /* Hero image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--accent-color1);
+    /* White text */
+    padding: 1rem;
 }
