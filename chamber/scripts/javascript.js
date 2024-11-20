@@ -77,12 +77,52 @@ function CreatCards(data) {
     })
 };
 
-// Select the hero container
-const heroContainer = document.getElementById('hero');
 
-// Define the image URL
-const heroImageURL = '"C:\Users\Gary\Desktop\wdd231\chamber\images\anastasiia-kamil-RHA-GKdSAew-unsplash.WebP"' // Replace with your image path
+// Fetch Current Events
+async function fetchEvents() {
+    const eventsContainer = document.getElementById('events-container');
+    const eventsData = await fetch('path-to-your-events.json').then(res => res.json());
+    eventsData.forEach(event => {
+        const article = document.createElement('article');
+        article.innerHTML = `
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <p><strong>Date:</strong> ${event.date}</p>
+        `;
+        eventsContainer.appendChild(article);
+    });
+}
 
-// Set the background image dynamically
-heroContainer.style.backgroundImage = `url(${heroImageURL})`;
+// Fetch Weather Data
+async function fetchWeather() {
+    const weatherContainer = document.getElementById('weather-container');
+    const weatherData = await fetch('https://api.open-meteo.com/v1/forecast?...') // Replace with actual API URL
+        .then(res => res.json());
 
+    weatherContainer.innerHTML = `
+        <p>Temperature: ${weatherData.temperature}°C</p>
+        <p>Condition: ${weatherData.condition}</p>
+    `;
+}
+
+// Fetch Spotlight Companies
+async function fetchSpotlights() {
+    const spotlightContainer = document.getElementById('spotlight-container');
+    const spotlightData = await fetch('path-to-your-spotlight.json').then(res => res.json());
+    spotlightData.forEach(company => {
+        const section = document.createElement('section');
+        section.innerHTML = `
+            <img src="${company.logo}" alt="${company.name}">
+            <h3>${company.name}</h3>
+            <p>${company.description}</p>
+        `;
+        spotlightContainer.appendChild(section);
+    });
+}
+
+// Initialize All Data Fetching
+document.addEventListener('DOMContentLoaded', () => {
+    fetchEvents();
+    fetchWeather();
+    fetchSpotlights();
+});

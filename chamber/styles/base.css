@@ -337,7 +337,7 @@ img {
 /* Header and Hero Image Styling */
 #top-bar {
     position: relative;
-    height: 50vh;
+    height: 75vh;
     /* Adjust hero height */
     width: 100%;
     background-image: url(../images/hero-image.WebP);
@@ -352,5 +352,70 @@ img {
     color: var(--accent-color1);
     /* White text */
     padding: 1rem;
+    z-index: -1;
+    /* Keeps the background behind other elements */
+    background-repeat: no-repeat;
+    /* Prevents tiling */
 }
 
+/* Grid Layout for Main Section */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    align-items: stretch;
+    /* Ensures all sections have equal height */
+}
+
+/* Section Styling (Shared Styles) */
+.grid-container>section {
+    background-color: var(--accent-color2);
+    color: var(--font-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust Specific Section Styling */
+#current-events,
+#weather,
+#spotlights,
+#directory {
+    text-align: center;
+}
+
+/* Spotlights Section */
+#spotlight-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#spotlight-container section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+}
+
+#spotlight-container img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #spotlight-container {
+        grid-template-columns: 1fr;
+    }
+}

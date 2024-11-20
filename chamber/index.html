@@ -51,50 +51,42 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <h2>Member Directory</h2>
+        <h2>Home</h2>
     </header>
-    <main>
-        <div id="weatherData">
-            <h2>Current Weather</h2>
-            <p id="temp">Temp: --</p>
-            <p id="description">Description: --</p>
-            <p id="humidity">Humidity: --</p>
-            <p id="wind">Wind: --</p>
-        </div>
-    <!-- Main Content -->
-    <main>
-        <section class="weather">
-            <div class="current-weather">
-                <h2>Current Weather</h2>
-                <p>Temp: 90°F</p>
-                <p>Mostly Cloudy</p>
-                <p>Humidity: 65%</p>
-                <p>Wind: 15mph</p>
-            </div>
-            <div class="forecast">
-                <h2>Weather Forecast</h2>
-                <p>Today: 90°F</p>
-                <p>Wednesday: 89°F</p>
-                <p>Thursday: 68°F</p>
-            </div>
-        </section>
 
-        <section class="business-info">
-            <div class="business-card">
-                <img src="placeholder.jpg" alt="Business Logo">
-                <h3>Business Name</h3>
-                <p>Phone: (123) 456-7890</p>
-                <p>Email: info@business.com</p>
-            </div>
-            <div class="business-card">
-                <img src="placeholder.jpg" alt="Business Logo">
-                <h3>Business Name</h3>
-                <p>Phone: (123) 456-7890</p>
-                <p>Email: info@business.com</p>
+
+    <!-- Main Content -->
+    <main class="grid-container">
+        <!-- Current Events Section -->
+        <section id="current-events">
+            <h2>Current Events</h2>
+            <div id="events-container">
+                <!-- Events will be dynamically loaded here -->
             </div>
         </section>
-    </main>  
     
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Weather</h2>
+            <div id="weather-container">
+                <!-- Weather information will be dynamically loaded here -->
+            </div>
+        </section>
+    
+        <!-- Spotlights Section -->
+        <section id="spotlights">
+            <h2>Spotlights</h2>
+            <div id="spotlight-container">
+                <!-- Spotlight companies will be dynamically loaded here -->
+            </div>
+        </section>
+    
+        
+            </div>
+        </section>
+    </main>
+    
+
     <footer>
         <p>©<span id="year"></span>⚡ Garikai Chatayika ⚡ Zimbabwe</p>
         <p id="lastModified">lastmodified</p>
