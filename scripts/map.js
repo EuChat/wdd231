@@ -11,12 +11,25 @@ async function apiFetch() {
             const data = await response.json();
             console.log(data); // testing only
             // displayResults(data); // uncomment when ready
+            BuildPage(data)
         } else {
             throw Error(await response.text());
         }
     } catch (error) {
         console.log(error);
     }
+}
+
+
+function BuildPage(data) {
+    currentTemp.innerHTML = `${data.main.temp}&deg;C`;
+    const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    let desc = data.weather[0].description;
+    weatherIcon.setAttribute('src', iconsrc);
+    weatherIcon.setAttribute('width', '200');
+    weatherIcon.setAttribute('loading', 'lazy');
+    weatherIcon.setAttribute('alt', 'weather icon');
+    captionDesc.textContent = `${desc}`;
 }
 
 apiFetch();
