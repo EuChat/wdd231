@@ -66,63 +66,95 @@ function CreatCards(data) {
         link.textContent = business.phone;
         description.textContent = business.description;
 
-        card.appendChild(name)
-        card.appendChild(img)
-        card.appendChild(description)
-        card.appendChild(address)
-        card.appendChild(link)
+        card.appendChild(name);
+        card.appendChild(img);
+        card.appendChild(description);
+        card.appendChild(address);
+        card.appendChild(link);
 
-        container.appendChild(card)
+        container.appendChild(card);
 
     })
 };
 
 
-// Fetch Current Events
-async function fetchEvents() {
-    const eventsContainer = document.getElementById('events-container');
-    const eventsData = await fetch('path-to-your-events.json').then(res => res.json());
-    eventsData.forEach(event => {
-        const article = document.createElement('article');
-        article.innerHTML = `
-            <h3>${event.title}</h3>
-            <p>${event.description}</p>
-            <p><strong>Date:</strong> ${event.date}</p>
-        `;
-        eventsContainer.appendChild(article);
-    });
-}
+
+
+// // Fetch Current Events
+// async function fetchEvents() {
+//     const eventsContainer = document.getElementById('events-container');
+//     const eventsData = await fetch('path-to-your-events.json').then(res => res.json());
+//     eventsData.forEach(event => {
+//         const article = document.createElement('article');
+//         article.innerHTML = `
+//             <h3>${event.title}</h3>
+//             <p>${event.description}</p>
+//             <p><strong>Date:</strong> ${event.date}</p>
+//         `;
+//         eventsContainer.appendChild(article);
+//     });
+// }
+
+
+
 
 // Fetch Weather Data
-async function fetchWeather() {
-    const weatherContainer = document.getElementById('weather-container');
-    const weatherData = await fetch('https://api.open-meteo.com/v1/forecast?...') // Replace with actual API URL
-        .then(res => res.json());
 
-    weatherContainer.innerHTML = `
-        <p>Temperature: ${weatherData.temperature}°C</p>
-        <p>Condition: ${weatherData.condition}</p>
-    `;
+// select HTML elements in the document
+const currentTemp = document.querySelector('#current-temp');
+const weatherIcon = document.querySelector('#weather-icon');
+const captionDesc = document.querySelector('figcaption');
+url = 'https://api.openweathermap.org/data/2.5/weather?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
+
+async function apiFetch() {
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            // console.log(data); // testing only
+            displayResults(data); // uncomment when ready
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-// Fetch Spotlight Companies
-async function fetchSpotlights() {
-    const spotlightContainer = document.getElementById('spotlight-container');
-    const spotlightData = await fetch('path-to-your-spotlight.json').then(res => res.json());
-    spotlightData.forEach(company => {
-        const section = document.createElement('section');
-        section.innerHTML = `
-            <img src="${company.logo}" alt="${company.name}">
-            <h3>${company.name}</h3>
-            <p>${company.description}</p>
-        `;
-        spotlightContainer.appendChild(section);
-    });
+
+function displayResults(data) {
+    currentTemp.innerHTML = `${data.main.temp}&deg;C`;
+    const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    let desc = data.weather[0].description;
+    weatherIcon.setAttribute('src', iconsrc);
+    weatherIcon.setAttribute('width', '200');
+    weatherIcon.setAttribute('loading', 'lazy');
+    weatherIcon.setAttribute('alt', 'weather icon');
+    captionDesc.textContent = `${desc}`;
 }
 
-// Initialize All Data Fetching
-document.addEventListener('DOMContentLoaded', () => {
-    fetchEvents();
-    fetchWeather();
-    fetchSpotlights();
-});
+apiFetch();
+
+
+
+// // Fetch Spotlight Companies
+// async function fetchSpotlights() {
+//     const spotlightContainer = document.getElementById('spotlight-container');
+//     const spotlightData = await fetch('https://euchat.github.io/wdd231/chamber/data/members.json').then(res => res.json());
+//     spotlightData = res.businesses
+//     spotlightData.forEach(company => {
+//         const section = document.createElement('section');
+//         section.innerHTML = `
+//             <img src="${company.logo}" alt="${company.name}">
+//             <h3>${company.name}</h3>
+//             <p>${company.description}</p>
+//         `;
+//         spotlightContainer.appendChild(section);
+//     });
+// }
+
+// // Initialize All Data Fetching
+// document.addEventListener('DOMContentLoaded', () => {
+//     fetchEvents();
+//     // fetchSpotlights();
+// });
