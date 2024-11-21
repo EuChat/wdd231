@@ -130,12 +130,37 @@ function displayResults(data) {
     currentTemp.innerHTML = `${data.main.temp}&deg;C`;
     const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     let desc = data.weather[0].description;
+    let humidity = data.main.humidity; // Humidity
+let tempMax = data.main.temp_max; // Max temperature
+let tempMin = data.main.temp_min; // Min temperature
+let sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString(); // Convert sunrise to readable time
+let sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString(); // Convert sunset to readable time
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('width', '200');
     weatherIcon.setAttribute('loading', 'lazy');
     weatherIcon.setAttribute('alt', 'weather icon');
     captionDesc.textContent = `${desc}`;
 }
+description = description
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
+
+  let formattedTemp = Math.round(data.main.temp); // Rounded temperature
+
+  let descriptions = data.weather
+  .map(event => event.description)
+  .join(', '); // Combine all weather descriptions
+
+  currentTemp.innerHTML = `${Math.round(data.main.temp)}°F`;
+document.querySelector('#weather-description').textContent = description;
+document.querySelector('#humidity').textContent = `Humidity: ${data.main.humidity}%`;
+document.querySelector('#sunrise').textContent = `Sunrise: ${sunrise}`;
+document.querySelector('#sunset').textContent = `Sunset: ${sunset}`;
+
+
+
 
 apiFetch();
 let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
