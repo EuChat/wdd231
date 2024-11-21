@@ -35,15 +35,15 @@
         color: wheat;
     }
 
-    .navigation {
+    .navigation,
+    .navigation ul {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         background-color: var(--accent-color2);
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+        width: 100%;
     }
 
     .navigation.show {
@@ -73,16 +73,60 @@
         grid-template-columns: 75% 25%;
     }
 
-    @media (min-width: 768px) {
-        #directory {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-
+    #top-bar {
+        position: relative;
+        /* Adjust hero height */
+        width: 100%;
+        background-image: url(../images/hero-image.WebP);
+        /* Hero image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* Prevents tiling */
+        height: 75vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--accent-color1);
+        /* White text */
+        padding: 1rem;
+        z-index: -1;
+        /* Keeps the background behind other elements */
     }
 
-    @media (min-width: 768px) {
-        .hero {
-            min-height: 100vh;
-        }
+}
+
+#directory h2,
+h1 {
+    color: #FFFFFF;
+    /* Bright white for better visibility */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Dark semi-transparent background */
+    padding: 0.5rem 1rem;
+    /* Add padding for better readability */
+    text-align: center;
+    /* Center the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    /* Subtle shadow for depth */
+    border-radius: 5px;
+    /* Rounded edges for a modern look */
+    margin: 0.5rem auto;
+    /* Add spacing around the text */
+    width: fit-content;
+    /* Adjust width to fit the text content */
+}
+
+
+@media (min-width: 768px) {
+    #directory {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+}
+
+@media (min-width: 768px) {
+    .hero {
+        min-height: 100vh;
     }
 }

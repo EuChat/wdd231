@@ -1,67 +1,65 @@
-{
-    "businesses": [
-        {
-            "name": "Mutare Hardware Supplies",
-            "address": "123 Main St, Mutare",
-            "phone": "+263 20 63545",
-            "website": "https://mutarehardware.example.com",
-            "image": "./images/hardware.WebP",
-            "membershipLevel": 2,
-            "description": "Building materials and tools provider."
-        },
-        {
-            "name": "Eastern Highlands Tours",
-            "address": "456 Valley Rd, Mutare",
-            "phone": "+263 77 345 6789",
-            "website": "https://easternhighlands.example.com",
-            "image": "images/tours.WebP",
-            "membershipLevel": 3,
-            "description": "Tour packages for the beautiful Eastern Highlands."
-        },
-        {
-            "name": "Manica Fresh Produce",
-            "address": "789 Market Square, Mutare",
-            "phone": "+263 20 45623",
-            "website": "https://manicafresh.example.com",
-            "image": "images/fresh.WebP",
-            "membershipLevel": 1,
-            "description": "Locally grown fruits and vegetables."
-        },
-        {
-            "name": "Mutare Tech Solutions",
-            "address": "102 Innovation Hub, Mutare",
-            "phone": "+263 77 567 1234",
-            "website": "https://mutaretech.example.com",
-            "image": "images/tech.WebP",
-            "membershipLevel": 2,
-            "description": "IT support and software development."
-        },
-        {
-            "name": "Highland Fitness Center",
-            "address": "54 Health Plaza, Mutare",
-            "phone": "+263 71 345 6789",
-            "website": "https://highlandfitness.example.com",
-            "image": "images/fitness1.WebP",
-            "membershipLevel": 3,
-            "description": "Gym and personal training services."
-        },
-        {
-            "name": "Mutare Cafe & Bakery",
-            "address": "76 High Street, Mutare",
-            "phone": "+263 20 67890",
-            "website": "https://mutarecafe.example.com",
-            "image": "images/cafe.WebP",
-            "membershipLevel": 1,
-            "description": "Coffee, pastries, and light meals."
-        },
-        {
-            "name": "Manicaland Motors",
-            "address": "99 Garage Rd, Mutare",
-            "phone": "+263 78 555 2345",
-            "website": "https://manicalandmotors.example.com",
-            "image": "images/motors.WebP",
-            "membershipLevel": 2,
-            "description": "Car sales and maintenance services."
-        }
-    ]
-}
+[
+    {
+        "name": "Mutare Hardware Supplies",
+        "address": "123 Main St, Mutare",
+        "phone": "+263 20 63545",
+        "website": "https://mutarehardware.example.com",
+        "image": "./images/hardware.WebP",
+        "membershipLevel": 2,
+        "description": "Building materials and tools provider."
+    },
+    {
+        "name": "Eastern Highlands Tours",
+        "address": "456 Valley Rd, Mutare",
+        "phone": "+263 77 345 6789",
+        "website": "https://easternhighlands.example.com",
+        "image": "images/tours.WebP",
+        "membershipLevel": 3,
+        "description": "Tour packages for the beautiful Eastern Highlands."
+    },
+    {
+        "name": "Manica Fresh Produce",
+        "address": "789 Market Square, Mutare",
+        "phone": "+263 20 45623",
+        "website": "https://manicafresh.example.com",
+        "image": "images/fresh.WebP",
+        "membershipLevel": 1,
+        "description": "Locally grown fruits and vegetables."
+    },
+    {
+        "name": "Mutare Tech Solutions",
+        "address": "102 Innovation Hub, Mutare",
+        "phone": "+263 77 567 1234",
+        "website": "https://mutaretech.example.com",
+        "image": "images/tech.WebP",
+        "membershipLevel": 2,
+        "description": "IT support and software development."
+    },
+    {
+        "name": "Highland Fitness Center",
+        "address": "54 Health Plaza, Mutare",
+        "phone": "+263 71 345 6789",
+        "website": "https://highlandfitness.example.com",
+        "image": "images/fitness1.WebP",
+        "membershipLevel": 3,
+        "description": "Gym and personal training services."
+    },
+    {
+        "name": "Mutare Cafe & Bakery",
+        "address": "76 High Street, Mutare",
+        "phone": "+263 20 67890",
+        "website": "https://mutarecafe.example.com",
+        "image": "images/cafe.WebP",
+        "membershipLevel": 1,
+        "description": "Coffee, pastries, and light meals."
+    },
+    {
+        "name": "Manicaland Motors",
+        "address": "99 Garage Rd, Mutare",
+        "phone": "+263 78 555 2345",
+        "website": "https://manicalandmotors.example.com",
+        "image": "images/motors.WebP",
+        "membershipLevel": 2,
+        "description": "Car sales and maintenance services."
+    }
+]

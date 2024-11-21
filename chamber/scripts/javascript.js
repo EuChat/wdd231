@@ -38,7 +38,7 @@ async function GetBusinesses() {
     const data = await fetch(url);
     const info = await data.json();
 
-    CreatCards(info.businesses);
+    CreatCards(info);
 
 };
 
@@ -71,8 +71,12 @@ function CreatCards(data) {
         card.appendChild(description);
         card.appendChild(address);
         card.appendChild(link);
-
+        try {
         container.appendChild(card);
+            
+        } catch{
+            
+        }
 
     })
 };
@@ -104,11 +108,11 @@ function CreatCards(data) {
 const currentTemp = document.querySelector('#current-temp');
 const weatherIcon = document.querySelector('#weather-icon');
 const captionDesc = document.querySelector('figcaption');
-url = 'https://api.openweathermap.org/data/2.5/weather?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
+let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
 
 async function apiFetch() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(urlWeather);
         if (response.ok) {
             const data = await response.json();
             // console.log(data); // testing only
@@ -134,7 +138,57 @@ function displayResults(data) {
 }
 
 apiFetch();
+let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
 
+async function fetchWeatherForecast() {
+    let data = (await fetch(urlForecast));
+    data = await data.json();
+
+    displayWeather(data);
+}
+let x = 'strs'
+function displayWeather(data) {
+    let container = document.querySelector('#forecast-container');
+    let day1 = document.createElement('p');
+    let day2 = document.createElement('p');
+    let day3 = document.createElement('p');
+    let index =today.getDay()+1
+
+    let list  = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ]
+    
+
+
+    day1.textContent = `${list[index]} ${data.list[0].main.temp}°C`;
+    data.list.forEach(day => {
+        if (day.dt_txt.includes(String(today.getDate()+1), 7)) {
+            if (day.dt_txt.includes('12:00', 10)) {
+                day2.textContent = `${list[index]+1} ${day.main.temp}°C`;
+            }
+            
+        }
+        if (day.dt_txt.includes(String(today.getDate()+2), 7)) {
+            if (day.dt_txt.includes('12:00', 10)) {
+                day3.textContent = `${list[index+2]} ${day.main.temp}°C`;
+            }
+        }
+
+    })
+    container.appendChild(day1)
+    container.appendChild(day2)
+    container.appendChild(day3)
+    
+    
+}
+
+fetchWeatherForecast()
 
 
 // // Fetch Spotlight Companies
@@ -145,7 +199,8 @@ apiFetch();
 //     spotlightData.forEach(company => {
 //         const section = document.createElement('section');
 //         section.innerHTML = `
-//             <img src="${company.logo}" alt="${company.name}">
+//             <img src="${company.logo}" alt="${company.name}">    SDFGHJKL;'
+    
 //             <h3>${company.name}</h3>
 //             <p>${company.description}</p>
 //         `;
