@@ -29,6 +29,7 @@ body {
     min-width: 500px;
     color: var(--font-color);
     background-color: var(--accent-color2);
+    font-family: Arial, sans-serif;
 }
 
 
@@ -121,7 +122,10 @@ a {
 
 
 nav a {
-    text-decoration: none;
+    color: var(--accent-color1);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
 nav li {
@@ -261,23 +265,26 @@ img {
     align-items: center;
     background-size: cover;
     background-position: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.9)),
+        url(../images/hero-image.WebP);
+    color: var(--primary-color);
 }
 
 .hero-text {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Transparent black */
-    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
     border-radius: 10px;
+    color: var(--font-color);
     font-size: 2rem;
 }
 
-.hero {
+/*.hero {
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+}*/
 
 #hero {
     position: relative;
@@ -383,6 +390,28 @@ img {
     z-index: -1;
     /* Keeps the background behind other elements */
 }
+
+
+#directory h2,
+h1 {
+    color: #FFFFFF;
+    /* Bright white for better visibility */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Dark semi-transparent background */
+    padding: 0.5rem 1rem;
+    /* Add padding for better readability */
+    text-align: center;
+    /* Center the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    /* Subtle shadow for depth */
+    border-radius: 5px;
+    /* Rounded edges for a modern look */
+    margin: 0.5rem auto;
+    /* Add spacing around the text */
+    width: fit-content;
+    /* Adjust width to fit the text content */
+}
+
 
 /* footer */
 

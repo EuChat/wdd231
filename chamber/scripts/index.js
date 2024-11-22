@@ -1,88 +1,3 @@
-let year = document.querySelector('#year');
-let lastMod = document.querySelector('#lastModified');
-let container = document.querySelector('#directory');
-let today = new Date();
-let url = 'https://euchat.github.io/wdd231/chamber/data/members.json';
-
-year.textContent += today.getFullYear();
-
-lastMod.textContent += document.lastModified;
-
-
-
-// Store the selected elements that we are going to use. 
-let hamCount = 0;
-
-const mainnav = document.querySelector('.navigation')
-
-const hambutton = document.querySelector('#menu');
-
-// Add a click event listender to the hamburger button and use a callback function that toggles the list element's list of classes.
-hambutton.addEventListener('click', () => {
-
-    mainnav.classList.toggle('show');
-
-    if (hamCount == 0) {
-        hambutton.textContent = 'X';
-        hamCount = 1;
-    }
-    else {
-        hambutton.textContent = '≡';
-        hamCount = 0;
-    }
-});
-
-GetBusinesses();
-
-async function GetBusinesses() {
-    const data = await fetch(url);
-    const info = await data.json();
-
-    CreatCards(info);
-
-};
-
-
-
-function CreatCards(data) {
-    let businesses = Array.isArray(data) ? data : [data];
-    businesses.forEach(business => {
-        let card = document.createElement('section');
-        let img = document.createElement('img');
-        let name = document.createElement('h2');
-        let link = document.createElement('a');
-        let description = document.createElement('p');
-        let address = document.createElement('p');
-
-        img.setAttribute('src', business.image);
-        img.setAttribute('alt', 'business image');
-        img.setAttribute('loading', 'lazy');
-        img.setAttribute('width', '300');
-        img.setAttribute('height', '300');
-
-        name.textContent = business.name;
-        address.textContent = business.address;
-        link.setAttribute('href', business.website);
-        link.textContent = business.phone;
-        description.textContent = business.description;
-
-        card.appendChild(name);
-        card.appendChild(img);
-        card.appendChild(description);
-        card.appendChild(address);
-        card.appendChild(link);
-        try {
-        container.appendChild(card);
-            
-        } catch{
-            
-        }
-
-    })
-};
-
-
-
 
 // // Fetch Current Events
 // async function fetchEvents() {
@@ -107,8 +22,15 @@ function CreatCards(data) {
 // select HTML elements in the document
 const currentTemp = document.querySelector('#current-temp');
 const weatherIcon = document.querySelector('#weather-icon');
+const humidity = document.querySelector('#humidity');
+const wind = document.querySelector('#wind');
 const captionDesc = document.querySelector('figcaption');
 let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
+
+
+function CalculateWindChill(temp, windspd) {
+    return Math.round( 13.12 + (0.6215 * temp) - (11.37 * windspd *0.16) + (0.3965 *temp * windspd* 0.16)); 
+}  
 
 async function apiFetch() {
     try {
@@ -124,20 +46,29 @@ async function apiFetch() {
         console.log(error);
     }
 }
+function Capitalise(word) {
 
+    return word.charAt(0).toUpperCase()
+    + word.slice(1)
+}
 
 function displayResults(data) {
-    currentTemp.innerHTML = `${data.main.temp}&deg;C`;
+    currentTemp.innerHTML = `${Math.round(data.main.temp)}&deg;C`;
     const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     let desc = data.weather[0].description;
+    wind.textContent = `${CalculateWindChill(data.main.temp, data.wind.speed)}`
+    humidity.textContent = `${data.main.humidity}%`
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('width', '200');
     weatherIcon.setAttribute('loading', 'lazy');
-    weatherIcon.setAttribute('alt', 'weather icon');
-    captionDesc.textContent = `${desc}`;
+    weatherIcon.setAttribute('alt', 'Weather icon');
+    captionDesc.textContent = `${Capitalise(desc)}`;
 }
 
 apiFetch();
+
+
+
 let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
 
 async function fetchWeatherForecast() {
@@ -146,13 +77,12 @@ async function fetchWeatherForecast() {
 
     displayWeather(data);
 }
-let x = 'strs'
 function displayWeather(data) {
     let container = document.querySelector('#forecast-container');
     let day1 = document.createElement('p');
     let day2 = document.createElement('p');
     let day3 = document.createElement('p');
-    let index =today.getDay()+1
+    let index =today.getDay()
 
     let list  = [
         'Sunday',
@@ -166,17 +96,31 @@ function displayWeather(data) {
     
 
 
-    day1.textContent = `${list[index]} ${data.list[0].main.temp}°C`;
+    day1.textContent = `${list[index]} ${Math.round(data.list[0].main.temp)}°C`;
     data.list.forEach(day => {
+        let result = index
+
         if (day.dt_txt.includes(String(today.getDate()+1), 7)) {
             if (day.dt_txt.includes('12:00', 10)) {
-                day2.textContent = `${list[index]+1} ${day.main.temp}°C`;
+                if (result+1>=7){
+                    result = (result+1)%7
+                }
+                else{
+                    result += 1
+                }
+                day2.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
             }
             
         }
         if (day.dt_txt.includes(String(today.getDate()+2), 7)) {
             if (day.dt_txt.includes('12:00', 10)) {
-                day3.textContent = `${list[index+2]} ${day.main.temp}°C`;
+                if (result+2>= 7){
+                    result = (result+2)%7
+                }
+                else{
+                    result += 1;
+                }
+                day3.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
             }
         }
 
