@@ -187,7 +187,8 @@ button:active {
 
 
 
-#menu {
+#menu,
+button {
     display: block;
     border: none;
     background-color: var(--accent-color2);
@@ -211,7 +212,7 @@ h2 {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color:#AA6C39;
+    background-color: #AA6C39;
 }
 
 .buttons {
@@ -225,7 +226,8 @@ h2 {
     margin: 10px;
 }
 
-.buttons button {
+.buttons,
+button {
     color: var(--accent-color1);
     background-color: var(--accent-color2);
     height: auto;
@@ -299,15 +301,12 @@ img {
     height: 150px;
 }
 
-/* Grid Layout for Main Section */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-    align-items: stretch;
-    /* Ensures all sections have equal height */
+#action {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
 }
+
 
 
 

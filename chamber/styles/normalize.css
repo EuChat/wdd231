@@ -220,7 +220,7 @@ button,
 [type="submit"] {
     -webkit-appearance: button;
     appearance: button;
-    background-color: aqua;
+    background-color: rgb(120, 120, 120);
 }
 
 /**

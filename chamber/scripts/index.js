@@ -47,9 +47,19 @@ async function apiFetch() {
     }
 }
 function Capitalise(word) {
-
     return word.charAt(0).toUpperCase()
     + word.slice(1)
+}
+
+function CapitaliseString(stringOfWords) {
+    let list = stringOfWords.split(" ")
+    let result = ""
+    
+    list.forEach(word => {
+        result += `${Capitalise(word)} `
+    });
+
+    return result
 }
 
 function displayResults(data) {
@@ -62,7 +72,7 @@ function displayResults(data) {
     weatherIcon.setAttribute('width', '200');
     weatherIcon.setAttribute('loading', 'lazy');
     weatherIcon.setAttribute('alt', 'Weather icon');
-    captionDesc.textContent = `${Capitalise(desc)}`;
+    captionDesc.textContent = `${CapitaliseString(desc)}`;
 }
 
 apiFetch();

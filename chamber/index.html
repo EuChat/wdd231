@@ -40,6 +40,7 @@
                 <h1>Mutare Chamber Of Commerce</h1>
                 <button id="menu" type="button">≡</button>
             </div>
+            <button type="button" id="action">Join Us</button>
         </div>
 
         <nav class="navigation">
@@ -61,17 +62,19 @@
     <!-- Main Content -->
     <main class="grid-container">
         <!-- Current Events Section -->
-        <section id="current-events">
+        <section id="current-events" class="spotlight">
             <h2>Current Events</h2>
             <div id="events-container">
                 <!-- Events will be dynamically loaded here -->
+                <div class="events" id="event1"></div>
+                <div class="events" id="event2"></div>
             </div>
         </section>
 
         <!-- Weather Section -->
         <section id="weather">
             <h2>Weather</h2>
-            <div id="weather-container">
+            <div id="weather-container spotlight-container">
                 <!-- Weather information will be dynamically loaded here -->
                 <p>The current temperature in Mutare, Zimbabwe is <span id="current-temp"></span></p>
                 <p>Humidity:<span id="humidity"></span></p>
@@ -93,7 +96,7 @@
         </section>
 
         <!-- Spotlights Section -->
-        <section id="spotlights">
+        <section id="spotlights" class="spotlight">
             <h2>Spotlights</h2>
             <div id="spotlight-container">
                 <!-- Spotlight companies will be dynamically loaded here -->

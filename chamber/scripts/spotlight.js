@@ -8,7 +8,8 @@ let card3 = document.querySelector('#spot3');
 
 async function fetchData() {
     let data = await fetch(Spoturl);
-    data = await data.json()
+    data = await data.json();
+    data = data.filter(business => business.membershipLevel >= 2);
 
     CreateCards(data, card1);
     CreateCards(data, card2);
@@ -21,6 +22,7 @@ let min = 0
 let max = 6
 function getRndInteger() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // max and min included
 }
 
 function CreateCards(data, card) {

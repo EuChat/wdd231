@@ -20,7 +20,7 @@
     main {
         display: grid;
         gap: 10px;
-        max-width: 70%;
+        max-width: 90%;
     }
 
     /* header  elements*/
@@ -102,6 +102,21 @@
     #spotlight-container {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 4fr 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: stretch;
+        /* Ensures all sections have equal height */
+    }
+
+    #events-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
 }
