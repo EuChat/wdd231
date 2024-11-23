@@ -4,12 +4,14 @@ let card1 = document.querySelector('#spot1');
 let card2 = document.querySelector('#spot2');
 let card3 = document.querySelector('#spot3');
 
-
+let min = 0
+let max = 6
 
 async function fetchData() {
     let data = await fetch(Spoturl);
     data = await data.json();
     data = data.filter(business => business.membershipLevel >= 2);
+    max = data.length;
 
     CreateCards(data, card1);
     CreateCards(data, card2);
@@ -18,8 +20,7 @@ async function fetchData() {
 
 }
 
-let min = 0
-let max = 6
+
 function getRndInteger() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     // max and min included
@@ -36,6 +37,7 @@ function CreateCards(data, card) {
     let index = getRndInteger();
 
     let workingBusiness = data[index];
+    console.log(workingBusiness);
 
     Name.textContent = workingBusiness.name
     Address.textContent = workingBusiness.address

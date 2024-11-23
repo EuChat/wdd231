@@ -32,8 +32,6 @@ function DisplayData(list, container) {
     let Description = document.createElement('p');
 
     let workingEvent = list[index];
-    console.log(workingEvent.title);
-
 
     Title.textContent = workingEvent.title;
     Date.textContent = workingEvent.date;

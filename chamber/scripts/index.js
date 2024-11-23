@@ -33,19 +33,12 @@ function CalculateWindChill(temp, windspd) {
 }  
 
 async function apiFetch() {
-    try {
-        const response = await fetch(urlWeather);
-        if (response.ok) {
-            const data = await response.json();
-            // console.log(data); // testing only
-            displayResults(data); // uncomment when ready
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
-    }
+    const response = await fetch(urlWeather);
+    const data = await response.json();
+    // console.log(data); // testing only
+    displayResults(data); // uncomment when ready
 }
+
 function Capitalise(word) {
     return word.charAt(0).toUpperCase()
     + word.slice(1)
@@ -68,10 +61,12 @@ function displayResults(data) {
     let desc = data.weather[0].description;
     wind.textContent = `${CalculateWindChill(data.main.temp, data.wind.speed)}`
     humidity.textContent = `${data.main.humidity}%`
+
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('width', '200');
     weatherIcon.setAttribute('loading', 'lazy');
     weatherIcon.setAttribute('alt', 'Weather icon');
+    
     captionDesc.textContent = `${CapitaliseString(desc)}`;
 }
 
