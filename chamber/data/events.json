@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Mutare Business Networking Expo 2024",
+      "date": "January 15, 2024",
+      "time": "9:00 AM - 5:00 PM",
+      "venue": "Golden Peacock Hotel, Mutare",
+      "description":
+        "Join the largest business networking event in Mutare, bringing together entrepreneurs, local business owners, and industry leaders to exchange ideas, build partnerships, and explore opportunities."
+    },
+    {
+      "title": "Women in Business Luncheon",
+      "date": "February 8, 2024",
+      "time": "12:00 PM - 3:00 PM",
+      "venue": "Holiday Inn Mutare",
+      "description":
+        "An exclusive luncheon celebrating women entrepreneurs and leaders in business. Attendees will have the chance to network, listen to inspiring success stories, and discuss strategies for fostering gender diversity in the business community."
+    },
+    {
+      "title": "Mutare Business Innovation Workshop",
+      "date": "March 5, 2024",
+      "time": "10:00 AM - 4:00 PM",
+      "venue": "Mutare Hall, Civic Centre",
+      "description":
+        "This interactive workshop focuses on innovation and technology trends that can drive business growth in the Manicaland region. Topics include digital transformation, e-commerce, and sustainable business practices."
+    },
+    {
+      "title": "Chamber Annual Golf Tournament",
+      "date": "April 20, 2024",
+      "time": "7:30 AM - 3:30 PM",
+      "venue": "Hillside Golf Club, Mutare",
+      "description":
+        "Tee off at the Mutare Chamber of Commerce Annual Golf Tournament! A fun-filled day of golf, networking, and charity fundraising. Proceeds will go toward supporting youth entrepreneurship programs in Mutare."
+    },
+    {
+      "title": "Local Business Awards Gala Night",
+      "date": "May 25, 2024",
+      "time": "6:30 PM - 10:30 PM",
+      "venue": "Courtauld Theatre, Mutare",
+      "description":
+        "Celebrate the achievements of outstanding businesses and entrepreneurs in Mutare! The evening includes a red carpet, dinner, entertainment, and the presentation of awards in categories such as innovation, sustainability, and community impact."
+    }
+]
