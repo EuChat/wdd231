@@ -426,6 +426,12 @@ h1 {
 
 /* ---------------form ------------- */
 
+.forms label {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .forms {
     display: flex;
     flex-direction: column;
@@ -434,12 +440,6 @@ h1 {
     background-color: var(--accent-color3);
     border: var(--border);
     padding: 2rem;
-
-    label {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
 
     input,
     select {
