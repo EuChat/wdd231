@@ -5,7 +5,6 @@ let event2 = document.querySelector('#event2');
 async function fetchEvents() {
     let data = await fetch(eventsUrl);
     let response = await data.json();
-    // console.log(response[0]);
 
     DisplayData(response, event1);
     DisplayData(response, event2);

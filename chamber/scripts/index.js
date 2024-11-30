@@ -35,7 +35,6 @@ function CalculateWindChill(temp, windspd) {
 async function apiFetch() {
     const response = await fetch(urlWeather);
     const data = await response.json();
-    // console.log(data); // testing only
     displayResults(data); // uncomment when ready
 }
 
@@ -82,14 +81,73 @@ async function fetchWeatherForecast() {
 
     displayWeather(data);
 }
+// function displayWeather(data) {
+//     let container = document.querySelector('#forecast-container');
+//     let day1 = document.createElement('p');
+//     let day2 = document.createElement('p');
+//     let day3 = document.createElement('p');
+//     let index =today.getDay()
+
+//     let list  = [
+//         'Sunday',
+//         'Monday',
+//         'Tuesday',
+//         'Wednesday',
+//         'Thursday',
+//         'Friday',
+//         'Saturday'
+//     ]
+    
+
+
+//     day1.textContent = `${list[index]} ${Math.round(data.list[0].main.temp)}°C`;
+//     data.list.forEach(day => {
+//         let result = index
+//         let control = today.getDate()
+
+//         if (day.dt_txt.includes(String(control+1), 7)) {//the problem is that it wont work if its the last day of the month
+//             if (day.dt_txt.includes('12:00', 10)) {
+//                 if (result+1>=7){
+//                     result = (result+1)%7
+//                 }
+//                 else{
+//                     result += 1
+//                 }
+//                 day2.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
+//             }
+            
+//         }
+//         if (day.dt_txt.includes(String(control+2), 7)) {//here too
+//             if (day.dt_txt.includes('12:00', 10)) {
+//                 if (result+2>= 7){
+//                     result = (result+2)%7
+//                 }
+//                 else{
+//                     result += 1;
+//                 }
+//                 day3.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
+//             }
+//         }
+
+//     })
+//     container.appendChild(day1)
+//     container.appendChild(day2)
+//     container.appendChild(day3)
+// }
+
+
 function displayWeather(data) {
     let container = document.querySelector('#forecast-container');
     let day1 = document.createElement('p');
     let day2 = document.createElement('p');
     let day3 = document.createElement('p');
-    let index =today.getDay()
 
-    let list  = [
+    // Get today's date and weekday index
+    let today = new Date();
+    let index = today.getDay();
+
+    // Weekday names
+    let list = [
         'Sunday',
         'Monday',
         'Tuesday',
@@ -97,44 +155,45 @@ function displayWeather(data) {
         'Thursday',
         'Friday',
         'Saturday'
-    ]
-    
+    ];
 
+    // Function to add days and return correct weekday index
+    function getNextDayIndex(currentIndex, daysToAdd) {
+        return (currentIndex + daysToAdd) % 7;
+    }
 
+    // Get dates for next 3 days
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    let dayAfterTomorrow = new Date(today);
+    dayAfterTomorrow.setDate(today.getDate() + 2);
+
+    // Display weather for today
     day1.textContent = `${list[index]} ${Math.round(data.list[0].main.temp)}°C`;
-    data.list.forEach(day => {
-        let result = index
 
-        if (day.dt_txt.includes(String(today.getDate()+1), 7)) {
-            if (day.dt_txt.includes('12:00', 10)) {
-                if (result+1>=7){
-                    result = (result+1)%7
-                }
-                else{
-                    result += 1
-                }
-                day2.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
-            }
-            
-        }
-        if (day.dt_txt.includes(String(today.getDate()+2), 7)) {
-            if (day.dt_txt.includes('12:00', 10)) {
-                if (result+2>= 7){
-                    result = (result+2)%7
-                }
-                else{
-                    result += 1;
-                }
-                day3.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
-            }
+    // Iterate through the forecast data
+    data.list.forEach(forecast => {
+        let forecastDate = new Date(forecast.dt_txt);
+
+        // Check for tomorrow's weather at noon
+        if (forecastDate.getDate() === tomorrow.getDate() && 
+            forecastDate.getMonth() === tomorrow.getMonth() &&
+            forecastDate.getHours() === 12) {
+            day2.textContent = `${list[getNextDayIndex(index, 1)]} ${Math.round(forecast.main.temp)}°C`;
         }
 
-    })
-    container.appendChild(day1)
-    container.appendChild(day2)
-    container.appendChild(day3)
-    
-    
+        // Check for the day after tomorrow's weather at noon
+        if (forecastDate.getDate() === dayAfterTomorrow.getDate() && 
+            forecastDate.getMonth() === dayAfterTomorrow.getMonth() &&
+            forecastDate.getHours() === 12) {
+            day3.textContent = `${list[getNextDayIndex(index, 2)]} ${Math.round(forecast.main.temp)}°C`;
+        }
+    });
+
+    container.appendChild(day1);
+    container.appendChild(day2);
+    container.appendChild(day3);
+
 }
 
 fetchWeatherForecast()

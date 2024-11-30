@@ -18,7 +18,6 @@ async function getProphetData() {
     let response = await fetch(url);
     let data = await response.json();
 
-    // console.table(data.prophets);
     displayProphets(data.prophets);
 
     all.addEventListener('click', () => displayProphets(data.prophets));
