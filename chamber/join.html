@@ -34,7 +34,7 @@
             <div class="header-content">
                 <img id="logo" src="./images/logo.WebP" alt="Mutare Chamber of Commerce Logo">
                 <h1>Mutare Chamber Of Commerce</h1>
-                <button type="button" id="menu" type="button">≡</button>
+                <button id="menu">≡</button>
             </div>
         </div>
         <nav class="navigation">
@@ -89,6 +89,7 @@
             <label>
                 Membership Level:
                 <select name="membership" title="Choose your membership level" required>
+                    <option value="none" placeholder>Membership level</option>
                     <option value="NP">NP Membership</option>
                     <option value="Bronze">Bronze Membership</option>
                     <option value="Silver">Silver Membership</option>
@@ -105,31 +106,30 @@
             <!-- Submit Button -->
             <button type="submit">Join community</button>
         </form>
-        </section>
 
         <section class="membership-cards">
             <div class="card" id="np-card">
                 <h3>NP Membership</h3>
                 <p>No fee for non-profit organizations.</p>
-                <button type="button" id="free">Learn More</button>
+                <button id="free">Learn More</button>
             </div>
 
             <div class="card" id="bronze-card">
                 <h3>Bronze Membership</h3>
                 <p>Basic membership with essential benefits.</p>
-                <button type="button" id="bronze">Learn More</button>
+                <button id="bronze">Learn More</button>
             </div>
 
             <div class="card" id="silver-card">
                 <h3>Silver Membership</h3>
                 <p>Enhanced membership with added perks.</p>
-                <button type="button" id="silver">Learn More</button>
+                <button id="silver">Learn More</button>
             </div>
 
             <div class="card" id="gold-card">
                 <h3>Gold Membership</h3>
                 <p>Premium membership with exclusive benefits.</p>
-                <button type="button" id="gold">Learn More</button>
+                <button id="gold">Learn More</button>
             </div>
         </section>
 
@@ -140,7 +140,7 @@
                     <h3>NP Membership</h3>
                     <button type="button" id="free-closer">&times;</button>
                 </div>
-                <p>
+
                 <h4>Features:</h4>
                 Cost: Free for non-profit organizations. <br>
                 Benefits:
@@ -150,7 +150,7 @@
                     <li>Participation in community-focused initiatives. </li>
                     <li>Invitations to quarterly non-profit roundtables. </li>
                 </ul>
-                </p>
+
 
             </div>
         </div>
@@ -160,7 +160,7 @@
                     <h3>Bronze Membership</h3>
                     <button type="button" id="bronze-closer">&times;</button>
                 </div>
-                <p>
+
                 <h4>Features:</h4>
                 Cost: Affordable, entry-level membership. <br>
                 Benefits:
@@ -171,7 +171,7 @@
                     <li>Eligibility to participate in training and workshops. </li>
                     <li>Recognition on the chamber's social media. </li>
                 </ul>
-                </p>
+
 
             </div>
         </div>
@@ -182,7 +182,7 @@
                     <h3>Silver Membership</h3>
                     <button type="button" id="silver-closer">&times;</button>
                 </div>
-                <p>
+
                 <h4>Features:</h4>
                 Cost: Mid-tier membership with added perks. <br>
                 Benefits: <br>
@@ -194,7 +194,7 @@
                     <li>Invitation to member-only networking dinners. </li>
                     <li>Access to mentorship programs with established business leaders. </li>
                 </ul>
-                </p>
+
 
             </div>
         </div>
@@ -205,7 +205,7 @@
                     <h3>Gold Membership</h3>
                     <button type="button" id="gold-closer">&times;</button>
                 </div>
-                <p>
+
                 <h4>Features:</h4>
                 Cost: Premium membership for maximum exposure and benefits. <br>
                 Benefits: <br>
@@ -219,11 +219,10 @@
                     <li>Priority sponsorship opportunities for chamber activities.</li>
                     <li>Annual award consideration as a Gold Member.</li>
                 </ul>
-                </p>
+
 
             </div>
         </div>
-        </form>
     </main>
     <footer>
         <!-- Address Section -->
