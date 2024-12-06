@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chamber page for WDD231 by Garikai Chatayika">
+    <meta name="author" content="Garikai Chatayika">
+    <title>WDD 231 -Mutare Chamber of Commerce - Garikai Chatayika</title>
+    <meta property="og:url" content="https://euchat.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mutare Chamber of Commerce">
+    <meta property="og:description" content="Official page for the Mutare Chamber of Commerce.">
+    <meta property="og:image" content="https://example.com/images/hero-image.WebP">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/styles-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./images/snake.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="./scripts/commonscript.js" defer></script>
+    <script src="./scripts/discover.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="top-bar">
+            <div class="header-content">
+                <img id="logo" src="./images/logo.WebP" alt="Mutare Chamber of Commerce Logo">
+                <h1>Mutare Chamber Of Commerce</h1>
+                <button id="menu" type="button">≡</button>
+            </div>
+            <button type="button" id="action">Join Us</button>
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#discove">Discover</a></li>
+                <li><a href="./directory.html">Business Directory</a></li>
+                <li><a href="./join.html">Join</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#podcast">Podcast</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h2>Home</h2>
+
+    </header>
+
+
+    <main class="discover-layout">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div id="user-message" class="message"></div>
+            <!-- <section>
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li>Networking Expo - Jan 15, 2024</li>
+                    <li>Women in Business - Feb 8, 2024</li>
+                    <li>Innovation Workshop - Mar 5, 2024</li>
+                </ul>
+            </section> -->
+
+            <section id="current-events" class="spotlight">
+                <h2>Current Events</h2>
+                <ul id="future-events-container">
+                    <!-- Events will be dynamically loaded here -->
+                    <li class="events" id="event1"></li>
+                    <li class="events" id="event2"></li>
+                    <li class="events" id="event3"></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Calendar</h2>
+                <p>Embed a simple calendar widget or image.</p>
+            </section>
+        </aside>
+
+        <!-- Main Content Section -->
+        <section class="gallery">
+            <figure>
+                <img data-src="images/photo1.jpg" alt="Scenic view of Mutare" class="lazy">
+                <figcaption>Scenic view of Mutare</figcaption>
+            </figure>
+            <figure>
+                <img data-src="images/photo2.jpg" alt="Historical site" class="lazy">
+                <figcaption>Historical site</figcaption>
+            </figure>
+            <figure>
+                <img data-src="images/photo3.jpg" alt="Local business" class="lazy">
+                <figcaption>Local business</figcaption>
+            </figure>
+            <figure>
+                <img data-src="images/photo4.jpg" alt="Artisan market" class="lazy">
+                <figcaption>Artisan market</figcaption>
+            </figure>
+            <figure>
+                <img data-src="images/photo5.jpg" alt="Mountain view" class="lazy">
+                <figcaption>Mountain view</figcaption>
+            </figure>
+            <figure>
+                <img data-src="images/photo6.jpg" alt="Sunset in Mutare" class="lazy">
+                <figcaption>Sunset in Mutare</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Address Section -->
+        <div class="footer-address">
+            <p><strong>Mutare Chamber of Commerce</strong></p>
+            <p>10 Chiremba Road</p>
+            <p>Mutare, Zimbabwe</p>
+            <p>Email: <a href="mailto:info@mutarecoc.org">info@mutarecoc.org</a></p>
+            <p>Phone: +263 20 555 2300</p>
+        </div>
+
+        <!-- Social Icons Section -->
+        <div class="social-icons">
+            <a href="#"><img src="./images/yt.WebP" alt="YouTube"></a>
+            <a href="#"><img src="./images/twitter.WebP" alt="Twitter"></a>
+            <a href="#"><img src="./images/linkedin.WebP" alt="LinkedIn"></a>
+        </div>
+
+        <!-- Footer Information Section -->
+        <div class="footer-info">
+            <p>WDD231 Class Project</p>
+            <p>Garikai Chatayika</p>
+            <p>© <span id="year"></span> Mutare Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

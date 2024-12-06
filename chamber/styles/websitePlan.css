@@ -1,0 +1,51 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Lora', serif;
+    color: #004d40;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .color-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .green {
+    background-color: #004d40;
+  }
+
+  .beige {
+    background-color: #f5f5dc;
+  }
+
+  .wireframe img {
+    max-width: 100%;
+    height: auto;
+  }
