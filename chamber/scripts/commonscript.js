@@ -35,7 +35,7 @@ try {
     let join = document.querySelector('#action');
 
     join.addEventListener('click', () => {
-        event.preventDefault(); // Prevent default behavior
+        // event.preventDefault(); // Prevent default behavior
         console.log('Join Us button clicked');
         window.location.href = './join.html'
     }); // Navigate to the Join page });
