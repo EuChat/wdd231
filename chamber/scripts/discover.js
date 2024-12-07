@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (lastVisit) {
         const daysAgo = Math.floor((now - lastVisit) / oneDay);
+        // console.log(daysAgo);
+
         if (daysAgo < 1) {
             userMessage.textContent = "Back so soon! Awesome!";
         } else if (daysAgo === 1) {
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     localStorage.setItem("lastVisit", now);
+    // console.log(localStorage.getItem("lastVisit"));
 });
 
 let upcomingContainer = document.querySelector("#events-container")
@@ -68,11 +71,6 @@ let eventsUrl = 'https://euchat.github.io/wdd231/chamber/data/events.json';
 let event1 = document.querySelector('#event1');
 let event2 = document.querySelector('#event2');
 let event3 = document.querySelector('#event3');
-
-let dataEvent1 = document.querySelector('#data-filler-event1');
-let dataEvent2 = document.querySelector('#data-filler-event2');
-let dataEvent3 = document.querySelector('#data-filler-event3');
-
 
 
 let minimun = 0;
@@ -87,47 +85,20 @@ async function GetEventsComming() {
     let data = await fetch(eventsUrl);
     data = await data.json();
 
-    PopulateFutureEvents(data, event1);
-    PopulateFutureEvents(data, event2);
-    PopulateFutureEvents(data, event3);
-
-    id = "data-filler-event1"
-    PopulateFilteredFutureEvents(data, dataEvent1);
-    PopulateFilteredFutureEvents(data, dataEvent2);
-    PopulateFilteredFutureEvents(data, dataEvent3);
+    PopulateFutureEvents(data, "#event1", "#modal-content1", "#data-filler-event1");
+    PopulateFutureEvents(data, "#event2", "#modal-content2", "#data-filler-event2");
+    PopulateFutureEvents(data, "#event3", "#modal-content3", "#data-filler-event3");
 
 }
 
 
 
 
-function PopulateFutureEvents(list, container) {
+function PopulateFutureEvents(list, container, corespondingModal, headerModal) {
 
-
-    let index = getRandInteger();
-    let Title = document.createElement('h3');
-    let Date = document.createElement('p');
-
-    let workingEvent = list[index];
-
-    Title.textContent = workingEvent.title;
-    Date.textContent = workingEvent.date;
-
-    container.appendChild(Title);
-    container.appendChild(Date);
-};
-
-
-
-
-
-
-
-
-
-
-function PopulateFilteredFutureEvents(list, container) {
-
+    let display = document.querySelector(container);
+    let body = document.querySelector(corespondingModal);
+    let head = document.querySelector(headerModal);
 
     let index = getRandInteger();
     let Title = document.createElement('h3');
@@ -140,27 +111,20 @@ function PopulateFilteredFutureEvents(list, container) {
 
     Title.textContent = workingEvent.title;
     Date.textContent = workingEvent.date;
-    Time.textContent = workingEvent.time;
-    Venue.textContent = workingEvent.venue;
-    Description.textContent = workingEvent.description;
+    Time.textContent = `Time: ${workingEvent.time}`;
+    Venue.textContent = `Venue: ${workingEvent.venue}`;
+    Description.textContent = `${workingEvent.description}`;
 
-    container.appendChild(Title);
-    container.appendChild(Date);
-    container.appendChild(Time);
-    container.appendChild(Venue);
-    container.appendChild(Description);
+    display.textContent = `${Title.textContent}    ${Date.textContent}`;
+    head.insertBefore(Title, head.childNodes[0]);
+
+    body.appendChild(Date);
+    body.appendChild(Time);
+    body.appendChild(Venue);
+    body.appendChild(Description);
+
+
 };
-
-
-
-
-
-
-
-
-
-
-
 
 
 

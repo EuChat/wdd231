@@ -183,6 +183,7 @@ button:hover {
     background-color: var(--primary-color);
     color: var(--accent-color1);
     cursor: pointer;
+    transition: background-color 1s;
 }
 
 button:active {
@@ -229,6 +230,7 @@ button {
     margin: 10px;
     color: var(--accent-color1);
     background-color: var(--accent-color2);
+    transition: background-color 1s;
     border-radius: 5px;
 }
 
@@ -250,7 +252,7 @@ section {
 img {
     width: 100%;
     height: auto;
-    max-width: 300px;
+    /* max-width: 300px; */
     /* Restrict large images */
     object-fit: cover;
     border-radius: 5px;
@@ -303,11 +305,10 @@ img {
     position: absolute;
     left: 20px;
     top: 30%;
-    z-index: 200;
+    z-index: 100;
     min-width: 200px;
     height: auto;
 }
-
 
 
 
@@ -327,9 +328,18 @@ img {
 #spotlights,
 #directory {
     text-align: center;
+
+}
+
+#current-events ul,
+#calendar {
+    margin: 50% 0;
 }
 
 
+#current-events ul li {
+    padding: 1rem;
+}
 
 /* Spotlights Section */
 
@@ -576,7 +586,7 @@ h1 {
     display: block;
     z-index: 900;
     pointer-events: all;
-    background-color: rgba(0, 0, 0, 0.823);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s;
 }
 
@@ -638,10 +648,16 @@ figure {
     border: black dotted 2px;
     margin: 5px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .gallery figure img:hover {
-    box-shadow: 3px 3px 3px 3px;
+    box-shadow: 3px 3px 10px 10px;
+}
+
+.gallery figure img {
+    width: 100%;
+    height: auto;
 }
 
 /*---------------footer-------------- */
@@ -709,77 +725,15 @@ footer {
 
 .discover-layout {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1fr;
+
 }
 
 .gallery {
-    grid-column: 2/3;
+    /* grid-column: 3/4; */
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
 }
-
-/*
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .discover-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    margin: 20px;
-  }
-  
-  .sidebar {
-    background: #f7f7f7;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
-  
-  .gallery figure {
-    position: relative;
-  }
-  
-  .gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-  
-  .message {
-    padding: 10px;
-    background: #e8f4fc;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .discover-layout {
-      grid-template-columns: 1fr;
-    }
-  
-    .gallery img:hover {
-      transform: none;
-    }
-  }
-  */

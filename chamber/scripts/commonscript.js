@@ -23,11 +23,22 @@ hambutton.addEventListener('click', () => {
     mainnav.classList.toggle('show');
 
     if (hamCount == 0) {
-        hambutton.textContent = 'X';
+        hambutton.innerHTML = `&times`;
         hamCount = 1;
     }
     else {
-        hambutton.textContent = '≡';
+        hambutton.innerHTML = `&#9776`;
         hamCount = 0;
     }
 });
+try {
+    let join = document.querySelector('#action');
+
+    join.addEventListener('click', () => {
+        event.preventDefault(); // Prevent default behavior
+        console.log('Join Us button clicked');
+        window.location.href = './join.html'
+    }); // Navigate to the Join page });
+
+} catch {
+}
