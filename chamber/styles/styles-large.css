@@ -64,6 +64,20 @@
 
     }
 
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    #action {
+        left: 20px;
+        top: 85%;
+        height: auto;
+        z-index: 200;
+    }
+
     #menu {
         display: none;
     }

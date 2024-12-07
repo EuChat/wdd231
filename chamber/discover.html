@@ -21,9 +21,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+
     <script src="./scripts/commonscript.js" defer></script>
     <script src="./scripts/discover.js" defer></script>
-
 </head>
 
 <body>
@@ -50,26 +50,20 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <h2>Home</h2>
+        <h2>Discover</h2>
 
     </header>
 
 
     <main class="discover-layout">
         <!-- Sidebar Section -->
+        <div id="overlay"></div>
         <aside class="sidebar">
-            <div id="user-message" class="message"></div>
-            <!-- <section>
-                <h2>Upcoming Events</h2>
-                <ul>
-                    <li>Networking Expo - Jan 15, 2024</li>
-                    <li>Women in Business - Feb 8, 2024</li>
-                    <li>Innovation Workshop - Mar 5, 2024</li>
-                </ul>
-            </section> -->
+            <div id="user-message" class="modal">
+            </div>
 
             <section id="current-events" class="spotlight">
-                <h2>Current Events</h2>
+                <h2>Upcoming Events</h2>
                 <ul id="future-events-container">
                     <!-- Events will be dynamically loaded here -->
                     <li class="events" id="event1"></li>
@@ -77,36 +71,73 @@
                     <li class="events" id="event3"></li>
                 </ul>
             </section>
-            <section>
+
+            <div class="modal" id="modal-event1">
+                <div class="modal-content">
+                    <div id="data-filler-event1">
+                        <h3>word</h3>
+                        <button type="button" class="closer">&times;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="modal-event2">
+                <div class="modal-content">
+                    <div id="data-filler-event2">
+                        <h3>word</h3>
+                        <button type="button" class="closer">&times;</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal" id="modal-event3">
+                <div class="modal-content">
+                    <div id="data-filler-event3">
+                        <h3>word</h3>
+                        <button type="button" class="closer">&times;</button>
+                    </div>
+                </div>
+            </div>
+
+            <section>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos harum praesentium ut fugit id
+                voluptatum consectetur omnis necessitatibus at esse facilis quae optio nam dolorum, reiciendis quibusdam
+                porro totam illum labore. Voluptates officiis quidem veritatis, perspiciatis rerum incidunt repudiandae
+                amet optio. Est eos facere exercitationem labore dicta voluptatibus alias commodi, corrupti unde, modi
+                dolorum tempora eaque eius odit quod iusto maiores quasi temporibus ea dolorem quaerat ratione
+                excepturi! Nam aperiam neque nemo numquam inventore eaque consequatur, itaque, officia laudantium quia
+                eveniet magnam quas a ab optio voluptatem nostrum dignissimos quae, adipisci repudiandae natus maxime
+                quidem ipsum? Non vel voluptatum molestiae.</section>
+            <section id="calendar-container">
                 <h2>Calendar</h2>
-                <p>Embed a simple calendar widget or image.</p>
+                <div id="calendar"></div>
             </section>
         </aside>
 
         <!-- Main Content Section -->
         <section class="gallery">
             <figure>
-                <img data-src="images/photo1.jpg" alt="Scenic view of Mutare" class="lazy">
+                <img src="./images/city.jpg" alt="Scenic view of Mutare" loading="lazy">
                 <figcaption>Scenic view of Mutare</figcaption>
             </figure>
             <figure>
-                <img data-src="images/photo2.jpg" alt="Historical site" class="lazy">
+                <img src="./images/city.jpg" alt="Historical site" loading="lazy">
                 <figcaption>Historical site</figcaption>
             </figure>
             <figure>
-                <img data-src="images/photo3.jpg" alt="Local business" class="lazy">
+                <img src="./images/city.jpg" alt="Local business" loading="lazy">
                 <figcaption>Local business</figcaption>
             </figure>
             <figure>
-                <img data-src="images/photo4.jpg" alt="Artisan market" class="lazy">
+                <img src="./images/city.jpg" alt="Artisan market" loading="lazy">
                 <figcaption>Artisan market</figcaption>
             </figure>
             <figure>
-                <img data-src="images/photo5.jpg" alt="Mountain view" class="lazy">
+                <img src="./images/city.jpg" alt="Mountain view" loading="lazy">
                 <figcaption>Mountain view</figcaption>
             </figure>
             <figure>
-                <img data-src="images/photo6.jpg" alt="Sunset in Mutare" class="lazy">
+                <img src="./images/city.jpg" alt="Sunset in Mutare" loading="lazy">
                 <figcaption>Sunset in Mutare</figcaption>
             </figure>
         </section>
@@ -139,7 +170,6 @@
     </footer>
 
 
-    <script src="scripts.js"></script>
 </body>
 
 </html>
