@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "name": "Bvumba Mountains",
+        "image": "images/bvumba.jpg",
+        "description": "Explore the lush, misty forests and stunning views of the Bvumba Mountains.",
+        "category": "Trail",
+        "features": [
+            "Hiking",
+            "Birdwatching",
+            "Scenic Views"
+        ],
+        "location": "Mutare",
+        "latitude": -19.047,
+        "longitude": 32.688,
+        "rating": 4.8
+    },
+    {
+        "id": 2,
+        "name": "Chimanimani National Park",
+        "image": "images/chimanimani.jpg",
+        "description": "A serene escape with waterfalls, mountains, and pristine forests.",
+        "category": "Park",
+        "features": [
+            "Camping",
+            "Hiking",
+            "Photography"
+        ],
+        "location": "Chimanimani",
+        "latitude": -19.8,
+        "longitude": 32.87,
+        "rating": 4.9
+    },
+    {
+        "id": 3,
+        "name": "Vumba Botanical Gardens",
+        "image": "images/vumba_gardens.jpg",
+        "description": "Discover unique flora and fauna in these carefully preserved gardens.",
+        "category": "Garden",
+        "features": [
+            "Botanical Tours",
+            "Picnics",
+            "Nature Walks"
+        ],
+        "location": "Vumba",
+        "latitude": -19.07,
+        "longitude": 32.68,
+        "rating": 4.7
+    },
+    {
+        "id": 4,
+        "name": "Mutare Museum",
+        "image": "images/mutare_museum.jpg",
+        "description": "Learn about the cultural and natural history of Manicaland Province.",
+        "category": "Museum",
+        "features": [
+            "Educational Exhibits",
+            "Guided Tours",
+            "Historical Artifacts"
+        ],
+        "location": "Mutare",
+        "latitude": -18.97,
+        "longitude": 32.67,
+        "rating": 4.5
+    },
+    {
+        "id": 5,
+        "name": "Hot Springs Resort",
+        "image": "images/hot_springs.jpg",
+        "description": "Relax in the natural hot springs of Manicaland and enjoy the tranquil setting.",
+        "category": "Resort",
+        "features": [
+            "Thermal Pools",
+            "Spa Services",
+            "Relaxation"
+        ],
+        "location": "Hot Springs",
+        "latitude": -19.35,
+        "longitude": 32.98,
+        "rating": 4.6
+    },
+    {
+        "id": 6,
+        "name": "Leopard Rock Hotel",
+        "image": "images/leopard_rock.jpg",
+        "description": "Stay in a luxurious eco-friendly hotel overlooking the Bvumba Mountains.",
+        "category": "Lodging",
+        "features": [
+            "Golf Course",
+            "Nature Trails",
+            "Panoramic Views"
+        ],
+        "location": "Vumba",
+        "latitude": -19.07,
+        "longitude": 32.68,
+        "rating": 4.9
+    },
+    {
+        "id": 7,
+        "name": "Nyanga National Park",
+        "image": "images/nyanga.jpg",
+        "description": "Zimbabwe’s oldest national park, home to Mount Nyangani and scenic waterfalls.",
+        "category": "Park",
+        "features": [
+            "Mountain Climbing",
+            "Fishing",
+            "Waterfalls"
+        ],
+        "location": "Nyanga",
+        "latitude": -18.23,
+        "longitude": 32.75,
+        "rating": 4.8
+    },
+    {
+        "id": 8,
+        "name": "Mutarazi Falls",
+        "image": "images/mutarazi_falls.jpg",
+        "description": "Experience Zimbabwe’s tallest waterfall and thrilling skywalks.",
+        "category": "Waterfall",
+        "features": [
+            "Skywalk",
+            "Zip Lining",
+            "Photography"
+        ],
+        "location": "Nyanga",
+        "latitude": -18.32,
+        "longitude": 32.72,
+        "rating": 4.9
+    },
+    {
+        "id": 9,
+        "name": "Eastern Highlands Tea Estates",
+        "image": "images/tea_estates.jpg",
+        "description": "Tour the scenic tea plantations and learn about tea processing.",
+        "category": "Farm",
+        "features": [
+            "Tea Tours",
+            "Scenic Views",
+            "Tasting"
+        ],
+        "location": "Honde Valley",
+        "latitude": -18.72,
+        "longitude": 32.89,
+        "rating": 4.7
+    },
+    {
+        "id": 10,
+        "name": "Honde Valley",
+        "image": "images/honde_valley.jpg",
+        "description": "A valley of cascading rivers, waterfalls, and lush greenery.",
+        "category": "Valley",
+        "features": [
+            "Hiking",
+            "Birdwatching",
+            "Photography"
+        ],
+        "location": "Honde Valley",
+        "latitude": -18.9,
+        "longitude": 32.85,
+        "rating": 4.6
+    }
+]

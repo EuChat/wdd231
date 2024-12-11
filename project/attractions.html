@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the beauty of Mutare, Manicaland, with our eco-tourism website. Find top attractions, plan your trips, and connect with nature!">
+
+    <title>Mutare Eco-Tourism</title>
+    <meta name="author" content="Garikai Chatayika">
+    <meta property="og:url" content="https://euchat.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mutare Eco-Tourism">
+    <meta property="og:description"
+        content="Explore the beauty of Mutare, Manicaland, with our eco-tourism website. Find top attractions, plan your trips, and connect with nature!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/large.css">
+    <script src="./scripts/scripts.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/attractions.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap" defer></script>
+
+</head>
+
+<body>
+    <header class="hero">
+        <div id="first-head">
+            <h1>Discover the Untamed Beauty of Mutare</h1>
+            <p>Explore mountains, forests, and unique cultural landmarks in the heart of Manicaland.</p>
+        </div>
+
+        <img id="logo" src="./images/logo.webp" alt="Mutare Eco-Tourism logo" width="200" height="200">
+
+        <button type="button" id="action">Make A Booking</button>
+
+        <button id="menu" type="button">&#9776</button>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="./discover.html">Discover</a></li>
+                <li><a href="./directory.html">Attractions</a></li>
+                <li><a href="./book.html">Schedule An Appointment</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#podcast">Podcast</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <div id="directory">
+        </div>
+    </main>
+    <footer>
+        <!-- Address Section -->
+        <div class="footer-address">
+            <p><strong>Nature Nexus Expeditions</strong></p>
+            <p>10 Chiremba Road</p>
+            <p>Mutare, Zimbabwe</p>
+            <p>Email: <a href="mailto:info@naturenexusexpeditions.org">info@naturenexusexpeditions.org</a></p>
+            <p>Phone: +263 20 555 2300</p>
+        </div>
+
+        <!-- Social Icons Section -->
+        <div class="social-icons">
+            <a href="#"><img src="./images/yt.WebP" alt="YouTube"></a>
+            <a href="#"><img src="./images/twitter.WebP" alt="Twitter"></a>
+            <a href="#"><img src="./images/linkedin.WebP" alt="LinkedIn"></a>
+        </div>
+
+        <!-- Footer Information Section -->
+        <div class="footer-info">
+            <p>WDD231 Class Project</p>
+            <p>Garikai Chatayika</p>
+            <p>© <span id="year"></span> Nature Nexus Expeditions</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+    <div id="overlay"></div>
+
+</body>
+
+</html>
