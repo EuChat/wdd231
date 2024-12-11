@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Bvumba Mountains",
-        "image": "images/bvumba.jpg",
+        "image": "images/bvumba.WebP",
         "description": "Explore the lush, misty forests and stunning views of the Bvumba Mountains.",
         "category": "Trail",
         "features": [
@@ -18,7 +18,7 @@
     {
         "id": 2,
         "name": "Chimanimani National Park",
-        "image": "images/chimanimani.jpg",
+        "image": "images/chimanimani.WebP",
         "description": "A serene escape with waterfalls, mountains, and pristine forests.",
         "category": "Park",
         "features": [
@@ -34,7 +34,7 @@
     {
         "id": 3,
         "name": "Vumba Botanical Gardens",
-        "image": "images/vumba_gardens.jpg",
+        "image": "images/vumbaBotanical.WebP",
         "description": "Discover unique flora and fauna in these carefully preserved gardens.",
         "category": "Garden",
         "features": [
@@ -50,7 +50,7 @@
     {
         "id": 4,
         "name": "Mutare Museum",
-        "image": "images/mutare_museum.jpg",
+        "image": "images/mutareMuseum.WebP",
         "description": "Learn about the cultural and natural history of Manicaland Province.",
         "category": "Museum",
         "features": [
@@ -82,7 +82,7 @@
     {
         "id": 6,
         "name": "Leopard Rock Hotel",
-        "image": "images/leopard_rock.jpg",
+        "image": "images/leopardRock.WebP",
         "description": "Stay in a luxurious eco-friendly hotel overlooking the Bvumba Mountains.",
         "category": "Lodging",
         "features": [
@@ -98,7 +98,7 @@
     {
         "id": 7,
         "name": "Nyanga National Park",
-        "image": "images/nyanga.jpg",
+        "image": "images/nyangaPark.WebP",
         "description": "Zimbabwe’s oldest national park, home to Mount Nyangani and scenic waterfalls.",
         "category": "Park",
         "features": [
@@ -114,7 +114,7 @@
     {
         "id": 8,
         "name": "Mutarazi Falls",
-        "image": "images/mutarazi_falls.jpg",
+        "image": "images/mutaraziFalls.WebP",
         "description": "Experience Zimbabwe’s tallest waterfall and thrilling skywalks.",
         "category": "Waterfall",
         "features": [
@@ -130,7 +130,7 @@
     {
         "id": 9,
         "name": "Eastern Highlands Tea Estates",
-        "image": "images/tea_estates.jpg",
+        "image": "images/teaEstates.WebP",
         "description": "Tour the scenic tea plantations and learn about tea processing.",
         "category": "Farm",
         "features": [
@@ -146,7 +146,7 @@
     {
         "id": 10,
         "name": "Honde Valley",
-        "image": "images/honde_valley.jpg",
+        "image": "images/hondevalley.WebP",
         "description": "A valley of cascading rivers, waterfalls, and lush greenery.",
         "category": "Valley",
         "features": [

@@ -1,4 +1,5 @@
-let url = 'https://euchat.github.io/wdd231/project/data/attractions.json';
+url = 'https://euchat.github.io/wdd231/project/data/attractions.json';
+container = document.querySelector("#directory")
 
 GetBusinesses();
 
@@ -18,9 +19,12 @@ function CreatCards(data) {
         let card = document.createElement('section');
         let img = document.createElement('img');
         let name = document.createElement('h2');
-        let link = document.createElement('a');
+        let category = document.createElement('p');
+        let features = document.createElement('ul');
+
+        let location = document.createElement('p');
         let description = document.createElement('p');
-        let address = document.createElement('p');
+        let rating = document.createElement('p');
 
         img.setAttribute('src', business.image);
         img.setAttribute('alt', 'business image');
@@ -29,16 +33,24 @@ function CreatCards(data) {
         img.setAttribute('height', '300');
 
         name.textContent = business.name;
-        address.textContent = business.address;
-        link.setAttribute('href', business.website);
-        link.textContent = business.phone;
+        category.textContent = business.category;
+
+        business.features.forEach(feat => {
+            let foot = document.createElement('li')
+            foot.textContent = feat
+            features.appendChild(foot)
+        })
+        rating.textContent = `Rating: ${business.rating}`;
+        location.textContent = business.location;
         description.textContent = business.description;
 
         card.appendChild(name);
         card.appendChild(img);
+        card.appendChild(category);
+        card.appendChild(location);
+        card.appendChild(rating);
         card.appendChild(description);
-        card.appendChild(address);
-        card.appendChild(link);
+        // card.appendChild(link);
         try {
             container.appendChild(card);
 

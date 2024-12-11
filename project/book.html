@@ -7,7 +7,7 @@
     <meta name="description"
         content="Explore the beauty of Mutare, Manicaland, with our eco-tourism website. Find top attractions, plan your trips, and connect with nature!">
 
-    <title>Mutare Eco-Tourism</title>
+    <title>Eco-Tourism Tour Booking Form</title>
     <meta name="author" content="Garikai Chatayika">
     <meta property="og:url" content="https://euchat.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
@@ -52,183 +52,46 @@
 
 </header>
 
+<body>
 
-<main>
-    <form method="GET" action="thanks.html" class="forms">
-        <!-- Applicant's First Name -->
-        <label>
-            First Name:
-            <input type="text" name="first" title="Enter your first name" autocomplete="given-name" required>
-        </label>
-        <!-- Applicant's Last Name -->
-        <label>
-            Last Name:
-            <input type="text" name="last" title="Enter your last name" autocomplete="family-name" required>
-        </label>
-        <!-- Applicant's Title -->
-        <label>
-            Organizational Title:
-            <input type="text" name="title" title="Enter your organizational title" autocomplete="organization-title"
-                pattern="[A-Za-z\- ]{7,}" required>
-        </label>
-        <!-- Email -->
-        <label>
-            Email:
-            <input type="email" name="email" title="Enter your email address" autocomplete="email"
-                placeholder="example@email.com" required>
-        </label>
-        <!-- Phone Number -->
-        <label>
-            Mobile Phone:
-            <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
-        </label>
-        <!-- Organization's Name -->
-        <label>
-            Business/Organization Name:
-            <input type="text" name="organization" title="Enter your organization's name" autocomplete="organization"
-                required>
-        </label>
-        <!-- Membership Level -->
-        <label>
-            Membership Level:
-            <select name="membership" title="Choose your membership level" required multiple size="4">
-                <option value="None" disabled selected>Membership level...</option>
-                <option value="NP">NP Membership</option>
-                <option value="Bronze">Bronze Membership</option>
-                <option value="Silver">Silver Membership</option>
-                <option value="Gold">Gold Membership</option>
+    <div class="form-container" id="formContainer">
+        <h1>Book Your Eco-Tourism Tour</h1>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tour">Select a Tour:</label>
+            <select id="tour" name="tour" required>
+                <option value="">-- Select a Tour --</option>
+                <option value="Mountain Trail">Mountain Trail Adventure</option>
+                <option value="Forest Exploration">Forest Exploration</option>
+                <option value="Wildlife Safari">Wildlife Safari</option>
+                <option value="River Excursion">River Excursion</option>
             </select>
-        </label>
-        <!-- Organization Description -->
-        <label>
-            Business Description:
-            <textarea name="description" title="Describe your business"></textarea>
-        </label>
-        <!-- Timestamp -->
-        <input type="hidden" name="timestamp" id="timestamp">
-        <!-- Submit Button -->
-        <button type="submit">Join community</button>
-    </form>
 
-    <section class="membership-cards">
-        <div class="card" id="np-card">
-            <h3>NP Membership</h3>
-            <p>No fee for non-profit organizations.</p>
-            <button id="free">Learn More</button>
-        </div>
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
 
-        <div class="card" id="bronze-card">
-            <h3>Bronze Membership</h3>
-            <p>Basic membership with essential benefits.</p>
-            <button id="bronze">Learn More</button>
-        </div>
-
-        <div class="card" id="silver-card">
-            <h3>Silver Membership</h3>
-            <p>Enhanced membership with added perks.</p>
-            <button id="silver">Learn More</button>
-        </div>
-
-        <div class="card" id="gold-card">
-            <h3>Gold Membership</h3>
-            <p>Premium membership with exclusive benefits.</p>
-            <button id="gold">Learn More</button>
-        </div>
-    </section>
-
-    <!-- Modals -->
-    <div class="modal" id="np-modal">
-        <div class="modal-content">
-            <div>
-                <h3>NP Membership</h3>
-                <button type="button" id="free-closer">&times;</button>
-            </div>
-
-            <h4>Features:</h4>
-            Cost: Free for non-profit organizations. <br>
-            Benefits:
-            <ul>
-                <li>Access to local networking events. </li>
-                <li>Basic listing in the business directory. </li>
-                <li>Participation in community-focused initiatives. </li>
-                <li>Invitations to quarterly non-profit roundtables. </li>
-            </ul>
-
-
-        </div>
-    </div>
-    <div class="modal" id="bronze-modal">
-        <div class="modal-content">
-            <div>
-                <h3>Bronze Membership</h3>
-                <button type="button" id="bronze-closer">&times;</button>
-            </div>
-
-            <h4>Features:</h4>
-            Cost: Affordable, entry-level membership. <br>
-            Benefits:
-            <ul>
-                <li>Access to all chamber events at a discounted rate. </li>
-                <li>Standard listing in the business directory with a link to the organization's website. </li>
-                <li>Subscription to the chamber's newsletter for updates and insights. </li>
-                <li>Eligibility to participate in training and workshops. </li>
-                <li>Recognition on the chamber's social media. </li>
-            </ul>
-
-
-        </div>
+            <button type="submit">Book Now</button>
+        </form>
     </div>
 
-    <div class="modal" id="silver-modal">
-        <div class="modal-content">
-            <div>
-                <h3>Silver Membership</h3>
-                <button type="button" id="silver-closer">&times;</button>
-            </div>
-
-            <h4>Features:</h4>
-            Cost: Mid-tier membership with added perks. <br>
-            Benefits: <br>
-            All Bronze Membership benefits, plus:
-            <ul>
-                <li>Enhanced listing in the business directory with a logo and short description. </li>
-                <li>Priority seating and registration for chamber events. </li>
-                <li>Eligibility for spotlight promotions in newsletters or social media. </li>
-                <li>Invitation to member-only networking dinners. </li>
-                <li>Access to mentorship programs with established business leaders. </li>
-            </ul>
-
-
-        </div>
+    <div class="thank-you-container hidden" id="thankYouContainer">
+        <h2>Thank You for Booking!</h2>
+        <p id="confirmationDetails"></p>
+        <button onclick="viewBookings()">View All Bookings</button>
     </div>
 
-    <div class="modal" id="gold-modal">
-        <div class="modal-content">
-            <div>
-                <h3>Gold Membership</h3>
-                <button type="button" id="gold-closer">&times;</button>
-            </div>
-
-            <h4>Features:</h4>
-            Cost: Premium membership for maximum exposure and benefits. <br>
-            Benefits: <br>
-            All Silver Membership benefits, plus:
-            <ul>
-                <li>Featured listing in the business directory with premium placement.</li>
-                <li>Free access to all chamber events, including exclusive VIP events.</li>
-                <li>Personalized promotional campaigns through chamber channels.</li>
-                <li>Opportunity to host chamber events or webinars.</li>
-                <li>One-on-one business consultation with chamber advisors.</li>
-                <li>Priority sponsorship opportunities for chamber activities.</li>
-                <li>Annual award consideration as a Gold Member.</li>
-            </ul>
-
-
-        </div>
+    <div class="booking-list hidden" id="bookingList">
+        <h2>All Bookings</h2>
+        <ul id="bookings"></ul>
     </div>
-</main>
-<footer>
-    <!-- Address Section -->
+
+
+</body>
     <footer>
         <!-- Address Section -->
         <div class="footer-address">
@@ -256,7 +119,7 @@
     </footer>
 
     <div id="overlay"></div>
-</footer>
+    </footer>
 
 
 </body>

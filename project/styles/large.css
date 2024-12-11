@@ -53,4 +53,8 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
+
+    #directory {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

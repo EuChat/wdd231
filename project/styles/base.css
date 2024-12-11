@@ -155,6 +155,17 @@ main {
   margin: 2rem;
 }
 
+/* 
+img {
+  width: 100%;
+  height: auto;
+  /* max-width: 300px; 
+  /* Restrict large images
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+} */
+
 button {
   display: block;
   border: 2px solid #005f5f;
@@ -256,13 +267,37 @@ footer a:hover {
 }
 
 
+/*---------------footer-------------- */
+
+
+
+footer a {
+  color: var(--font-color);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+
+#directory {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  /* Responsive grid*/
+  padding: 1rem;
+}
+
 /* Footer Base */
 
 footer {
   background-color: var(--primary-color);
   /* Keep the primary color */
   display: grid;
-  grid-template-columns: 20% auto 20%;
+  grid-template-columns: 20% 60% 20%;
   /* justify-content: center; */
   align-items: center;
   padding: 20px;
@@ -271,4 +306,112 @@ footer {
   color: var(--font-color);
   /* Use your font color variable */
   font-family: 'Open Sans', sans-serif;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 5rem;
+  transition: width 1s;
+}
+
+
+.social-icons img:hover {
+  width: 6rem;
+  transition: width 1s;
+}
+
+
+
+
+
+
+/* form css*/
+/*.form-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}*/
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #004d40;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+
+
+/*thanks css*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.thank-you-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #004d40;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
