@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./styles/large.css">
     <script src="./scripts/scripts.js" defer></script>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/booking.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap" defer></script>
 
 </head>
@@ -43,7 +44,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="./discover.html">Discover</a></li>
             <li><a href="./directory.html">Attractions</a></li>
-            <li><a href="./book.html">Schedule An Appointment</a></li>
+            <li><a href="3">Schedule An Appointment</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#podcast">Podcast</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -53,73 +54,63 @@
 </header>
 
 <body>
+    <div class="form-container">
+        <h1>Book Your Eco-Tour</h1>
+        <form action="./thanks.html" method="GET">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-    <div class="form-container" id="formContainer">
-        <h1>Book Your Eco-Tourism Tour</h1>
-        <form id="bookingForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="tour">Select a Tour:</label>
+            <label for="tour">Tour Type:</label>
             <select id="tour" name="tour" required>
                 <option value="">-- Select a Tour --</option>
-                <option value="Mountain Trail">Mountain Trail Adventure</option>
-                <option value="Forest Exploration">Forest Exploration</option>
+                <option value="Mountain Trail">Mountain Trail</option>
                 <option value="Wildlife Safari">Wildlife Safari</option>
+                <option value="Forest Exploration">Forest Exploration</option>
                 <option value="River Excursion">River Excursion</option>
             </select>
 
             <label for="date">Preferred Date:</label>
             <input type="date" id="date" name="date" required>
 
+            <label for="group">Group Size:</label>
+            <input type="number" id="group" name="group" min="1" max="20" required>
+
             <button type="submit">Book Now</button>
         </form>
     </div>
 
-    <div class="thank-you-container hidden" id="thankYouContainer">
-        <h2>Thank You for Booking!</h2>
-        <p id="confirmationDetails"></p>
-        <button onclick="viewBookings()">View All Bookings</button>
-    </div>
-
-    <div class="booking-list hidden" id="bookingList">
-        <h2>All Bookings</h2>
-        <ul id="bookings"></ul>
-    </div>
-
-
 </body>
-    <footer>
-        <!-- Address Section -->
-        <div class="footer-address">
-            <p><strong>Nature Nexus Expeditions</strong></p>
-            <p>10 Chiremba Road</p>
-            <p>Mutare, Zimbabwe</p>
-            <p>Email: <a href="mailto:info@naturenexusexpeditions.org">info@naturenexusexpeditions.org</a></p>
-            <p>Phone: +263 20 555 2300</p>
-        </div>
+<footer>
+    <!-- Address Section -->
+    <div class="footer-address">
+        <p><strong>Nature Nexus Expeditions</strong></p>
+        <p>10 Chiremba Road</p>
+        <p>Mutare, Zimbabwe</p>
+        <p>Email: <a href="mailto:info@naturenexusexpeditions.org">info@naturenexusexpeditions.org</a></p>
+        <p>Phone: +263 20 555 2300</p>
+    </div>
 
-        <!-- Social Icons Section -->
-        <div class="social-icons">
-            <a href="#"><img src="./images/yt.WebP" alt="YouTube"></a>
-            <a href="#"><img src="./images/twitter.WebP" alt="Twitter"></a>
-            <a href="#"><img src="./images/linkedin.WebP" alt="LinkedIn"></a>
-        </div>
+    <!-- Social Icons Section -->
+    <div class="social-icons">
+        <a href="#"><img src="./images/yt.WebP" alt="YouTube"></a>
+        <a href="#"><img src="./images/twitter.WebP" alt="Twitter"></a>
+        <a href="#"><img src="./images/linkedin.WebP" alt="LinkedIn"></a>
+    </div>
 
-        <!-- Footer Information Section -->
-        <div class="footer-info">
-            <p>WDD231 Class Project</p>
-            <p>Garikai Chatayika</p>
-            <p>© <span id="year"></span> Nature Nexus Expeditions</p>
-            <p>Last Modification: <span id="lastModified"></span></p>
-        </div>
-    </footer>
+    <!-- Footer Information Section -->
+    <div class="footer-info">
+        <p>WDD231 Class Project</p>
+        <p>Garikai Chatayika</p>
+        <p>© <span id="year"></span> Nature Nexus Expeditions</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </div>
+</footer>
 
-    <div id="overlay"></div>
-    </footer>
+<div id="overlay"></div>
+</footer>
 
 
 </body>
