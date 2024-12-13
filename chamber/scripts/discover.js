@@ -15,7 +15,7 @@ function ListenClosers() {
             modal.forEach(element => { element.classList.remove('show'); })
             overlay.classList.remove('show');
         })
-    })
+    }) 
 }
 
 ListenClosers();

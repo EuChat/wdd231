@@ -1,23 +1,16 @@
 
-// // Fetch Current Events
-// async function fetchEvents() {
-//     const eventsContainer = document.getElementById('events-container');
-//     const eventsData = await fetch('path-to-your-events.json').then(res => res.json());
-//     eventsData.forEach(event => {
-//         const article = document.createElement('article');
-//         article.innerHTML = `
-//             <h3>${event.title}</h3>
-//             <p>${event.description}</p>
-//             <p><strong>Date:</strong> ${event.date}</p>
-//         `;
-//         eventsContainer.appendChild(article);
-//     });
-// }
+function myMap() {
+    const mapProp = {
+        center: new google.maps.LatLng(-19.806141862257316, 32.80513766330442),
+        zoom: 8,
+    };
+    const map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
 
+document.addEventListener("DOMContentLoaded", () => {
+    myMap();
+});
 
-
-
-// Fetch Weather Data
 
 // select HTML elements in the document
 const currentTemp = document.querySelector('#current-temp');
@@ -29,8 +22,8 @@ let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=-18.975332
 
 
 function CalculateWindChill(temp, windspd) {
-    return Math.round( 13.12 + (0.6215 * temp) - (11.37 * windspd *0.16) + (0.3965 *temp * windspd* 0.16)); 
-}  
+    return Math.round(13.12 + (0.6215 * temp) - (11.37 * windspd * 0.16) + (0.3965 * temp * windspd * 0.16));
+}
 
 async function apiFetch() {
     const response = await fetch(urlWeather);
@@ -40,13 +33,13 @@ async function apiFetch() {
 
 function Capitalise(word) {
     return word.charAt(0).toUpperCase()
-    + word.slice(1)
+        + word.slice(1)
 }
 
 function CapitaliseString(stringOfWords) {
     let list = stringOfWords.split(" ")
     let result = ""
-    
+
     list.forEach(word => {
         result += `${Capitalise(word)} `
     });
@@ -65,7 +58,7 @@ function displayResults(data) {
     weatherIcon.setAttribute('width', '200');
     weatherIcon.setAttribute('loading', 'lazy');
     weatherIcon.setAttribute('alt', 'Weather icon');
-    
+
     captionDesc.textContent = `${CapitaliseString(desc)}`;
 }
 
@@ -73,151 +66,72 @@ apiFetch();
 
 
 
-let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=-18.97533294022674&lon=32.670230638794585&appid=e6539ce83c5f7f7067f9f0f774a26fbb&units=metric';
+let directs = [
+    "./images/chimanimani.WebP",
+    "./images/eastern-highlands-and.WebP",
+    "./images/EasternHighlands.WebP",
+    "./images/gemma-nutty-o-mbira-trail-chimanimani.WebP",
+    "./images/hondevalley.WebP",
+    "./images/hotsprings.WebP",
+    "./images/leopardRock.WebP",
+    "./images/licensed-image.WebP",
+    "./images/linkedin.WebP",
+    "./images/logo.webp",
+    "./images/mutaraziFalls.WebP",
+    "./images/mutareMuseum.WebP",
+    "./images/nyanga.WebP",
+    "./images/nyangaPark.WebP",
+    "./images/nyange1.WebP",
+    "./images/nyange4.WebP",
+    "./images/park4.WebP",
+    "./images/park7.WebP",
+    "./images/teaEstates.WebP",
+    "./images/vumba-bot-lake-770x550.WebP",
+    "./images/vumbaBotanical.WebP",
+]
 
-async function fetchWeatherForecast() {
-    let data = (await fetch(urlForecast));
-    data = await data.json();
 
-    displayWeather(data);
+function Capitalise(word) {
+    return word.charAt(0).toUpperCase()
+        + word.slice(1)
 }
-// function displayWeather(data) {
-//     let container = document.querySelector('#forecast-container');
-//     let day1 = document.createElement('p');
-//     let day2 = document.createElement('p');
-//     let day3 = document.createElement('p');
-//     let index =today.getDay()
 
-//     let list  = [
-//         'Sunday',
-//         'Monday',
-//         'Tuesday',
-//         'Wednesday',
-//         'Thursday',
-//         'Friday',
-//         'Saturday'
-//     ]
-    
+function CapitaliseString(stringOfWords) {
+    let list = stringOfWords.split(" ")
+    let result = ""
 
-
-//     day1.textContent = `${list[index]} ${Math.round(data.list[0].main.temp)}°C`;
-//     data.list.forEach(day => {
-//         let result = index
-//         let control = today.getDate()
-
-//         if (day.dt_txt.includes(String(control+1), 7)) {//the problem is that it wont work if its the last day of the month
-//             if (day.dt_txt.includes('12:00', 10)) {
-//                 if (result+1>=7){
-//                     result = (result+1)%7
-//                 }
-//                 else{
-//                     result += 1
-//                 }
-//                 day2.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
-//             }
-            
-//         }
-//         if (day.dt_txt.includes(String(control+2), 7)) {//here too
-//             if (day.dt_txt.includes('12:00', 10)) {
-//                 if (result+2>= 7){
-//                     result = (result+2)%7
-//                 }
-//                 else{
-//                     result += 1;
-//                 }
-//                 day3.textContent = `${list[result]} ${Math.round(day.main.temp)}°C`;
-//             }
-//         }
-
-//     })
-//     container.appendChild(day1)
-//     container.appendChild(day2)
-//     container.appendChild(day3)
-// }
-
-
-function displayWeather(data) {
-    let container = document.querySelector('#forecast-container');
-    let day1 = document.createElement('p');
-    let day2 = document.createElement('p');
-    let day3 = document.createElement('p');
-
-    // Get today's date and weekday index
-    let today = new Date();
-    let index = today.getDay();
-
-    // Weekday names
-    let list = [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-    ];
-
-    // Function to add days and return correct weekday index
-    function getNextDayIndex(currentIndex, daysToAdd) {
-        return (currentIndex + daysToAdd) % 7;
-    }
-
-    // Get dates for next 3 days
-    let tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1);
-    let dayAfterTomorrow = new Date(today);
-    dayAfterTomorrow.setDate(today.getDate() + 2);
-
-    // Display weather for today
-    day1.textContent = `${list[index]} ${Math.round(data.list[0].main.temp)}°C`;
-
-    // Iterate through the forecast data
-    data.list.forEach(forecast => {
-        let forecastDate = new Date(forecast.dt_txt);
-
-        // Check for tomorrow's weather at noon
-        if (forecastDate.getDate() === tomorrow.getDate() && 
-            forecastDate.getMonth() === tomorrow.getMonth() &&
-            forecastDate.getHours() === 12) {
-            day2.textContent = `${list[getNextDayIndex(index, 1)]} ${Math.round(forecast.main.temp)}°C`;
-        }
-
-        // Check for the day after tomorrow's weather at noon
-        if (forecastDate.getDate() === dayAfterTomorrow.getDate() && 
-            forecastDate.getMonth() === dayAfterTomorrow.getMonth() &&
-            forecastDate.getHours() === 12) {
-            day3.textContent = `${list[getNextDayIndex(index, 2)]} ${Math.round(forecast.main.temp)}°C`;
-        }
+    list.forEach(word => {
+        result += `${Capitalise(word)} `
     });
 
-    container.appendChild(day1);
-    container.appendChild(day2);
-    container.appendChild(day3);
+    return result
+}
+
+function getRandInteger(maximum, minimun) {
+    return Math.floor(Math.random() * (maximum - minimun + 1)) + minimun;
+    // max and min included
+};
+let imageContainer = document.querySelector("#pic-container");
+
+function PickRandomPicture() {
+    let index = getRandInteger(0, directs.length)
+    let image = document.createElement('img')
+    let thisContainer = document.createElement('figure')
+    let words = document.createElement('figcaption')
+
+    image.setAttribute('src', directs[index])
+    image.setAttribute('alt', directs[index].split('/')[2].replace(".WebP", ""))
+    image.setAttribute('height', '200')
+    image.setAttribute('width', '300')
+    image.setAttribute('loading', 'lazy')
+    words.textContent = CapitaliseString(directs[index].split('/')[2].replace(".WebP", ""))
+
+    thisContainer.appendChild(image)
+    thisContainer.appendChild(words)
+    imageContainer.appendChild(thisContainer)
 
 }
 
-fetchWeatherForecast()
-
-
-// // Fetch Spotlight Companies
-// async function fetchSpotlights() {
-//     const spotlightContainer = document.getElementById('spotlight-container');
-//     const spotlightData = await fetch('https://euchat.github.io/wdd231/chamber/data/members.json').then(res => res.json());
-//     spotlightData = res.businesses
-//     spotlightData.forEach(company => {
-//         const section = document.createElement('section');
-//         section.innerHTML = `
-//             <img src="${company.logo}" alt="${company.name}">    SDFGHJKL;'
-    
-//             <h3>${company.name}</h3>
-//             <p>${company.description}</p>
-//         `;
-//         spotlightContainer.appendChild(section);
-//     });
-// }
-
-// // Initialize All Data Fetching
-// document.addEventListener('DOMContentLoaded', () => {
-//     fetchEvents();
-//     // fetchSpotlights();
-// });
+PickRandomPicture()
+PickRandomPicture()
+PickRandomPicture()

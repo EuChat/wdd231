@@ -202,6 +202,8 @@ section {
   width: 100%;
   height: 100%;
   padding: 2rem;
+  border-radius: 15px;
+
 }
 
 
@@ -264,6 +266,77 @@ footer a:hover {
   margin-top: 0.5rem;
   color: var(--font-color-dark);
   font-size: 1rem;
+}
+
+#pic-container figure img {
+  width: 80%;
+  height: auto;
+}
+
+#googleMap {
+  width: 100%;
+  height: 300px;
+}
+
+
+.modal {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s;
+  background-color: var(--accent-color1);
+  border: var(--border);
+  color: var(--accent-color2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal div div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  border-bottom: var(--border);
+}
+
+.modal button {
+  background-color: var(--accent-color1);
+  border: none;
+  width: 25%;
+  color: var(--accent-color2);
+  align-items: start;
+  padding: 0;
+  margin: 0;
+}
+
+.modal.show {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.5s;
+}
+
+#overlay {
+  display: block;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#overlay.show {
+  display: block;
+  z-index: 900;
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s;
 }
 
 
