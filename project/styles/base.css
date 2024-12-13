@@ -296,7 +296,7 @@ footer a:hover {
   z-index: 1000;
 }
 
-.modal div div {
+.modal div {
   display: flex;
   justify-content: space-between;
   margin: 1rem;

@@ -51,21 +51,18 @@ function CreatCards(data) {
         let img = document.createElement('img');
         let name = document.createElement('h2');
         let category = document.createElement('p');
-        let features = document.createElement('ul');
 
         let location = document.createElement('p');
         let description = document.createElement('p');
         let rating = document.createElement('p');
 
-        card.setAttribute('class', 'opener')
-        correspondingDiv.setAttribute('id', `${business.usableID}`)
-        correspondingDiv.setAttribute('class', `modal`)
         /////////////////////////////////////////////////////////////////////
 
 
         let divHead = document.createElement('h3')
         let divButton = document.createElement('button')
         divButton.setAttribute('class', 'closer')
+
         let divHeadCage = document.createElement('div')
         let divlist = document.createElement('ul')
 
@@ -73,11 +70,19 @@ function CreatCards(data) {
 
         divHead.textContent = business.name
         divButton.innerHTML = `&times`
-        business.features.forEach(feature => {
+        business.features.forEach(feat => {
             listItem = document.createElement('li')
-            listItem.appendChild(feature)
+            listItem.textContent = feat
             divlist.appendChild(listItem)
         })
+
+
+        card.setAttribute('class', 'opener')
+        correspondingDiv.setAttribute('id', `${business.the_id}`)
+
+        correspondingDiv.setAttribute('class', `modal`)
+
+
         divHeadCage.appendChild(divHead)
         divHeadCage.appendChild(divButton)
         correspondingDiv.appendChild(divHeadCage)
@@ -95,6 +100,8 @@ function CreatCards(data) {
         name.textContent = business.name;
         category.textContent = business.category;
 
+
+
         rating.textContent = `Rating: ${business.rating}`;
         location.textContent = business.location;
         description.textContent = business.description;
@@ -105,8 +112,9 @@ function CreatCards(data) {
         card.appendChild(location);
         card.appendChild(rating);
         card.appendChild(description);
+        // console.log(business)
 
-        card.addEventListener('click', () => { showModal(`#${business.category}`) })
+        card.addEventListener('click', () => { showModal(`#${business.the_id}`) })
         try {
             container.appendChild(card);
             container.appendChild(correspondingDiv);
