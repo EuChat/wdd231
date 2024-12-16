@@ -296,7 +296,7 @@ footer a:hover {
   z-index: 1000;
 }
 
-.modal div {
+.modal-content {
   display: flex;
   justify-content: space-between;
   margin: 1rem;
@@ -339,6 +339,26 @@ footer a:hover {
   transition: background-color 0.5s;
 }
 
+.closer {
+  border: none;
+  align-self: center;
+  box-shadow: none;
+  size: 2rem;
+}
+
+.decor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.decor h4 {
+  font-weight: 600;
+}
+
+.special {
+  grid-column: 1/ 3;
+}
 
 /*---------------footer-------------- */
 

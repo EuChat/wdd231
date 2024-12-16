@@ -65,6 +65,7 @@ function CreatCards(data) {
 
         let divHeadCage = document.createElement('div')
         let divlist = document.createElement('ul')
+        let divbod = document.createElement('div')
 
         divHeadCage.setAttribute('class', 'modal-content')
 
@@ -76,6 +77,15 @@ function CreatCards(data) {
             divlist.appendChild(listItem)
         })
 
+        divbod.innerHTML = `
+        <h4>Category</h4> <p>${business.category}</p>
+        <h4>Location</h4> <p>${business.location}</p>
+        <h4>Latitude</h4> <p>${business.latitude}</p>
+        <h4>Longitude</h4> <p>${business.longitude}</p>
+        <h4 class='special'>Features</h4>
+        `
+
+        divbod.setAttribute('class', 'decor')
 
         card.setAttribute('class', 'opener')
         correspondingDiv.setAttribute('id', `${business.the_id}`)
@@ -86,7 +96,8 @@ function CreatCards(data) {
         divHeadCage.appendChild(divHead)
         divHeadCage.appendChild(divButton)
         correspondingDiv.appendChild(divHeadCage)
-        correspondingDiv.appendChild(divlist)
+        divbod.appendChild(divlist)
+        correspondingDiv.appendChild(divbod)
 
         ////////////////////////////////////////////////////////////////
 
@@ -115,6 +126,11 @@ function CreatCards(data) {
         // console.log(business)
 
         card.addEventListener('click', () => { showModal(`#${business.the_id}`) })
+        divButton.addEventListener('click', () => {
+            let parent = document.querySelector(`#${business.the_id}`)
+            parent.classList.remove('show')
+            overlay.classList.remove('show')
+        })
         try {
             container.appendChild(card);
             container.appendChild(correspondingDiv);
