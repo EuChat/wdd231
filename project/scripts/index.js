@@ -1,15 +1,32 @@
 
+/*function myMap() {
+    var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
 function myMap() {
-    const mapProp = {
-        center: new google.maps.LatLng(-19.806141862257316, 32.80513766330442),
+    var mapProp = {
+        center: new google.maps.LatLng(-18.983916528719526, 32.662576836698776),
         zoom: 8,
     };
-    const map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}*/
 
-document.addEventListener("DOMContentLoaded", () => {
-    myMap();
-});
+// function loadGoogleMapsAPI() {
+//     let script = document.createElement('script');
+//     let map = document.querySelector('#map')
+//     script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCXXOAo5JcQH5Tb2Dz1v1v9h-lmm8DxmK8&callback=myMap";
+//     script.async = true;
+//     script.defer = true;
+//     map.appendChild(script);
+// }
+
+// loadGoogleMapsAPI();
+
+
+
 
 
 // select HTML elements in the document
@@ -67,27 +84,30 @@ apiFetch();
 
 
 let directs = [
-    "./images/chimanimani.WebP",
-    "./images/eastern-highlands-and.WebP",
-    "./images/EasternHighlands.WebP",
-    "./images/gemma-nutty-o-mbira-trail-chimanimani.WebP",
-    "./images/hondevalley.WebP",
-    "./images/hotsprings.WebP",
-    "./images/leopardRock.WebP",
-    "./images/licensed-image.WebP",
-    "./images/linkedin.WebP",
-    "./images/logo.webp",
-    "./images/mutaraziFalls.WebP",
-    "./images/mutareMuseum.WebP",
-    "./images/nyanga.WebP",
-    "./images/nyangaPark.WebP",
-    "./images/nyange1.WebP",
-    "./images/nyange4.WebP",
-    "./images/park4.WebP",
-    "./images/park7.WebP",
-    "./images/teaEstates.WebP",
-    "./images/vumba-bot-lake-770x550.WebP",
     "./images/vumbaBotanical.WebP",
+    "./images/vumba-bot-lake-770x550.WebP",
+    "./images/teaEstates.WebP",
+    "./images/sunset-image.WebP",
+    "./images/nyangaPark.WebP",
+    "./images/nyangani.WebP",
+    "./images/nyanga (1).WebP",
+    "./images/nyanga.WebP",
+    "./images/mutareMuseum.WebP",
+    "./images/mutaraziFalls.WebP",
+    "./images/mount nyangani.WebP",
+    "./images/mare dam.WebP",
+    "./images/leopardRock.WebP",
+    "./images/hotsprings.WebP",
+    "./images/hondevalley.WebP",
+    "./images/grasslands.WebP",
+    "./images/gemma-nutty-o-mbira-trail-chimanimani.WebP",
+    "./images/EasternHighlands.WebP",
+    "./images/eastern-highlands-and.WebP",
+    "./images/eastern-highlands (1).WebP",
+    "./images/chimanimani.WebP",
+    "./images/Chimanimani-Mountain-Range.WebP",
+    "./images/bvumba.WebP",
+    "./images/chimanimani park.WebP"
 ]
 
 

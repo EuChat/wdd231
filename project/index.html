@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/large.css">
     <script src="./scripts/commonscripts.js" defer></script>
-    <script src="./ scripts /index.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXXOAo5JcQH5Tb2Dz1v1v9h-lmm8DxmK8&callback=myMap"
-        defer></script>
+        async defer></script>
 
 </head>
 
@@ -62,9 +62,13 @@
         </section>
         <section id="map">
 
-            <h1>My First Google Map</h1>
+            <h1>Mutare Manicaland </h1>
 
-            <div id="googleMap" width="300" height="400"></div>
+            <!-- <div id="googleMap"></div> -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60366.51138442377!2d32.60723073469937!3d-18.979715894245423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x192cea695e55d54f%3A0xcc229bd0b89d0f3!2sMutare!5e0!3m2!1sen!2szw!4v1734368122124!5m2!1sen!2szw"
+                width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                id="googleMap" title="Mutare"></iframe>
 
         </section>
         <section id="weather">
