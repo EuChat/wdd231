@@ -1,29 +1,26 @@
-// Function to parse query parameters
-function getQueryParams() {
-    const params = {};
-    const queryString = window.location.search.substring(1);
-    const pairs = queryString.split("&");
+let info = document.location.href;
+let formData = info.split('?')[1].split('&')
+let workspace = document.querySelector("#booking-details")
 
-    pairs.forEach(pair => {
-        const [key, value] = pair.split("=");
-        params[decodeURIComponent(key)] = decodeURIComponent(value || "");
-    });
-
-    return params;
+function show(cup) {
+    let result = ''
+    formData.forEach((element) => {
+        if (element.startsWith(cup)) {
+            result = element.split('=')[1].replace('%40', '@').replace('+', ' ').replace('%', '+')
+        }
+        // else {
+        //     result = 'none found'
+        // }
+    })
+    return (result)
 }
 
-// Populate booking details on the thank-you page
-const bookingDetails = getQueryParams();
-const detailsContainer = document.getElementById("booking-details");
 
-if (Object.keys(bookingDetails).length > 0) {
-    detailsContainer.innerHTML = `
-        <p><strong>Name:</strong> ${bookingDetails.name}</p>
-        <p><strong>Email:</strong> ${bookingDetails.email}</p>
-        <p><strong>Tour Type:</strong> ${bookingDetails.tour}</p>
-        <p><strong>Date:</strong> ${bookingDetails.date}</p>
-        <p><strong>Group Size:</strong> ${bookingDetails.group}</p>
-    `;
-} else {
-    detailsContainer.innerHTML = `<p>No booking details found.</p>`;
-}
+workspace.innerHTML = `
+<p> Name            :${show("name")}</p
+<p> Email           : <a href=https://${show("email")} target=blank> ${show("email")} </a></p>
+<p> Date            :${show("date")}</p>
+<p> Group size      :${show("group")}</p>
+<p> Tour            :${show("tour")}</p>
+`
+
